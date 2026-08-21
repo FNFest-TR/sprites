@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
+
+:root {
+  --bg-void: #050114;
+  --neon-pink: #ff007b;
+  --neon-cyan: #00f0ff;
+  --neon-yellow: #ffe600;
+  --neon-green: #00ff88;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: transparent !important;
+    font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+/* ========================================================
+   MODE 1: STREAM PROGRESS BANNER / HUD (GLITCH THEME)
+   ======================================================== */
+.obs-banner-container {
+    position: relative;
+    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 55%, #050114 100%);
+    border: 2px solid var(--neon-pink);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 380px;
+    max-width: 490px;
+    box-shadow: 0 0 30px rgba(255, 0, 123, 0.45), 
+                0 0 15px rgba(0, 240, 255, 0.35),
+                inset 0 0 25px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+}
+
+.banner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 0, 123, 0.4);
+    padding-bottom: 6px;
+}
+
+.banner-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.banner-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-cyan));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    box-shadow: 0 0 12px var(--neon-pink);
+    clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+
+.banner-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: -1px 0 var(--neon-cyan), 1px 0 var(--neon-pink);
+}
+
+.banner-count {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.banner-progress-bar {
+    height: 8px;
+    background: #050114;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    position: relative;
+}
+
+.banner-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff007b, #00f0ff, #00ff88);
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.banner-stats-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+.stat-highlight-owned { color: var(--neon-green); text-shadow: 0 0 8px rgba(0, 255, 136, 0.5); }
+.stat-highlight-missing { color: var(--neon-pink); text-shadow: 0 0 8px rgba(255, 0, 123, 0.5); }
+
+/* ========================================================
+   MODE 2: TICKER / CAROUSEL (GLITCH THEME)
+   ======================================================== */
+.obs-ticker-viewport {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    padding: 6px 0;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.obs-ticker-track {
+    display: flex;
+    gap: 14px;
+    animation: smoothTickerScroll 35s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.obs-ticker-track:hover { animation-play-state: paused; }
+
+@keyframes smoothTickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ticker-card {
+    width: 154px;
+    height: 205px;
+    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 65%, #050114 100%);
+    border: 1.5px solid rgba(0, 240, 255, 0.35);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(255, 0, 123, 0.1);
+}
+
+.ticker-card.is-owned {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.5);
+}
+
+.ticker-card.is-mastered {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+}
+
+.ticker-card-art {
+    width: 100%;
+    height: 125px;
+    background: radial-gradient(circle at 50% 40%, #23125e 0%, #0d0628 85%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 8px;
+}
+
+.ticker-card-img {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.85));
+}
+
+.ticker-variant-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.5);
+    letter-spacing: 0.4px;
+}
+
+.ticker-card-info {
+    padding: 8px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #08031d;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    flex: 1;
+    justify-content: space-between;
+}
+
+.ticker-card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.ticker-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ticker-pill-rarity {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    display: inline-block;
+}
+
+.ticker-pill-chance {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    background: #050114;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+/* ========================================================
+   MODE 3: 3x3 GLITCH ROTATING GRID (OVERRIDE THEME)
+   ======================================================== */
+.obs-3x3-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 480px;
+}
+
+.obs-3x3-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 60%, #050114 100%);
+    border: 2px solid var(--neon-pink);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 0 35px rgba(255, 0, 123, 0.45), 
+                0 0 15px rgba(0, 240, 255, 0.35),
+                inset 0 0 25px rgba(0, 0, 0, 0.85);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.obs-3x3-grid.fade-out {
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+.obs-3x3-grid.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 3x3 Big Character Card */
+.obs-3x3-card {
+    background: rgba(14, 7, 43, 0.85);
+    border: 1.5px solid rgba(0, 240, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 6px 8px;
+    height: 145px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    transition: all 0.25s ease;
+}
+
+.obs-3x3-card.is-owned {
+  border-color: var(--neon-green) !important;
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.5);
+}
+
+.obs-3x3-card.is-mastered {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
+}
+
+.obs-3x3-img-wrap {
+    width: 100%;
+    height: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.obs-3x3-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.9));
+    transition: transform 0.2s ease;
+}
+
+.obs-3x3-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.obs-3x3-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #e2e8f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.obs-3x3-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 7.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 1.5px 5px;
+    border-radius: 2px;
+    letter-spacing: 0.4px;
+}
+
+/* Pagination Dots */
+.obs-3x3-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 2px 0;
+}
+
+.obs-page-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1d114a;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.obs-page-dot.active {
+    background: var(--neon-cyan);
+    width: 18px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Rarity Badge Colors */
+.pill-mythic { background: var(--neon-yellow); color: #050114; }
+.pill-legendary { background: #ff8500; color: #fff; }
+.pill-epic { background: #b5179e; color: #fff; }
+.pill-rare { background: #00b4d8; color: #fff; }
+.pill-uncommon { background: var(--neon-green); color: #050114; }
+.pill-special { background: linear-gradient(135deg, #00f0ff, #ff007b, #ffe600); color: #050114; }
+.pill-common { background: #7f8c8d; color: #fff; }

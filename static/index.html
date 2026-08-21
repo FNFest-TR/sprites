@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Sprites Override Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/webp" href="/static/images/T_Icon_BR_Creature_Sprite_JazzJackrabbit_L.webp">
+</head>
+<body>
+
+    <!-- Cyber Background Effects -->
+    <div class="body-cyber-grid"></div>
+    <div class="body-scanlines"></div>
+
+    <!-- Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <div class="brand-section">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-title">
+                    <div class="glitch-logo" id="txtAppTitle" data-text="OVERRIDE TRACKER">OVERRIDE TRACKER</div>
+                    <div class="sub-badge-glitch" id="txtAppSubtitle">GLITCH SEASON ■ SPRITES SYSTEM</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="tr" onclick="setLanguage('tr')">TR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                </div>
+
+                <button class="btn btn-obs" onclick="openObsModal()">
+                    <span id="txtBtnObs">📺 OBS WIDGET</span>
+                </button>
+                <button class="btn btn-primary" id="btnRefreshScraper" onclick="triggerScraperRefresh()">
+                    <span id="txtBtnRefresh">🔄 FORTNITE.GG GÜNCELLE</span>
+                </button>
+                <button class="btn btn-outline" onclick="exportProgressJSON()">
+                    <span id="txtBtnBackup">💾 YEDEKLE</span>
+                </button>
+                <button class="btn btn-outline" onclick="importProgressJSON()">
+                    <span id="txtBtnImport">📥 İÇE AKTAR</span>
+                </button>
+                <button class="btn btn-outline" onclick="clearAllProgress()">
+                    <span id="txtBtnReset">🗑️ SIFIRLA</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats & Progress Section -->
+    <section class="stats-banner">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-label" id="txtStatTotal">TOPLAM SPRITE</div>
+                <div class="stat-value-group">
+                    <span class="stat-number" id="statTotal">0</span>
+                </div>
+            </div>
+
+            <div class="stat-item stat-owned">
+                <div class="stat-label" id="txtStatOwned">BENDE OLANLAR (OWNED)</div>
+                <div class="stat-value-group">
+                    <span class="stat-number" id="statOwned">0</span>
+                    <span class="stat-pct" id="statOwnedPct">(0%)</span>
+                </div>
+            </div>
+
+            <div class="stat-item stat-mastered">
+                <div class="stat-label" id="txtStatMastered">USTALAŞILAN (MASTERED)</div>
+                <div class="stat-value-group">
+                    <span class="stat-number" id="statMastered">0</span>
+                    <span class="stat-pct" id="statMasteredPct">(0%)</span>
+                </div>
+            </div>
+
+            <div class="stat-item stat-missing">
+                <div class="stat-label" id="txtStatMissing">EKSİKLER (MISSING)</div>
+                <div class="stat-value-group">
+                    <span class="stat-number" id="statMissing">0</span>
+                    <span class="stat-pct" id="statMissingPct">(0%)</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-track">
+                    <div class="progress-fill-owned" id="statProgressBar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter & Search Toolbar -->
+    <section class="filter-toolbar">
+        <div class="filter-box">
+            <!-- Row 1: Search & Season Pills & Select Action -->
+            <div class="filter-row-top">
+                <div class="search-input-wrap">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Sprite veya Varyant ara...">
+                </div>
+
+                <!-- Season Pills -->
+                <div class="season-pills">
+                    <button class="season-btn" data-season="all" id="btnSeasonAll">ALL SEASONS</button>
+                    <button class="season-btn" data-season="41" id="btnSeasonC7S3">C7 S3</button>
+                    <button class="season-btn active" data-season="42" id="btnSeasonC7S4">C7 S4</button>
+                </div>
+
+                <div>
+                    <button class="btn btn-outline" onclick="selectAllFiltered()">
+                        <span id="txtSelectFiltered">SEÇİLENLERİ 'OWNED' YAP</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Row 2: Status tabs, Rarity, Variant, Sort -->
+            <div class="filter-row-bottom">
+                <div class="tab-pills">
+                    <button class="tab-pill active" data-status="all" id="tabAll">TÜMÜ</button>
+                    <button class="tab-pill pill-missing" data-status="missing" id="tabMissing">❌ EKSİKLER</button>
+                    <button class="tab-pill pill-owned" data-status="owned" id="tabOwned">✔ BENDE OLANLAR</button>
+                    <button class="tab-pill pill-mastered" data-status="mastered" id="tabMastered">⭐ MASTERED</button>
+                    <button class="tab-pill" data-status="unreleased" id="tabUnreleased">🔒 UNRELEASED</button>
+                </div>
+
+                <!-- Rarity Filter -->
+                <select id="rarityFilter" class="select-ctrl">
+                    <option value="all" id="optRarityAll">Tüm Nadirlikler</option>
+                    <option value="mythic">Mythic</option>
+                    <option value="special">Special</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="epic">Epic</option>
+                    <option value="rare">Rare</option>
+                    <option value="uncommon">Uncommon</option>
+                </select>
+
+                <!-- Variant Filter -->
+                <select id="variantFilter" class="select-ctrl">
+                    <option value="all">Tüm Varyantlar</option>
+                </select>
+
+                <!-- Sort Filter -->
+                <select id="sortFilter" class="select-ctrl">
+                    <option value="id" id="optSortId">Sırala: Varsayılan (ID)</option>
+                    <option value="name" id="optSortName">Sırala: İsim (A-Z)</option>
+                    <option value="rarity" id="optSortRarity">Sırala: Nadirlik (Yüksek-Düşük)</option>
+                    <option value="missing_first" id="optSortMissing">Sırala: Önce Eksikler</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Grid -->
+    <main class="main-content">
+        <div class="sprite-grid" id="spritesGrid">
+            <!-- Sprites dynamically rendered here -->
+        </div>
+    </main>
+
+    <!-- OBS Link Helper Modal -->
+    <div class="modal-backdrop" id="obsModal" onclick="if(event.target===this) closeObsModal()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">📺 OBS BROWSER SOURCE LINKI</h2>
+                <button class="modal-close" onclick="closeObsModal()">&times;</button>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 14px;" id="modalDesc">
+                OBS Studio'da <b>Kaynaklar (Sources) -> Ekle (+) -> Tarayıcı (Browser)</b> seçin ve aşağıdaki URL'yi yapıştırın.
+            </p>
+
+            <div class="obs-options-grid">
+                <div class="obs-mode-btn" id="modeBtnBanner" onclick="setObsMode('banner', this)">
+                    📊 Banner / İlerleme Çubuğu
+                </div>
+                <div class="obs-mode-btn" id="modeBtnTicker" onclick="setObsMode('ticker', this)">
+                    🎞️ Kayan Eksikler (Ticker)
+                </div>
+                <div class="obs-mode-btn active" id="modeBtnGrid" onclick="setObsMode('grid', this)">
+                    🃏 3x3 Glitch Grid
+                </div>
+            </div>
+
+            <div class="obs-link-box">
+                <input type="text" class="obs-link-input" id="obsUrlInput" readonly value="http://127.0.0.1:8765/obs?mode=grid&season=42&lang=tr">
+                <button class="btn btn-primary" onclick="copyObsUrl()" id="copyBtnText">KOPYALA</button>
+            </div>
+
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-top: 10px;" id="modalTip">
+                💡 <b>İpucu:</b> Bu yönetim panelinde herhangi bir kutuyu (Owned / Mastered) işaretlediğinizde OBS'deki widget <b>anında ve gecikmesiz</b> güncellenir!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

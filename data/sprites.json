@@ -1,0 +1,2603 @@
+[
+  {
+    "id": "161",
+    "name": "Jackrabbit",
+    "parent": "CosmicThunderDoubleJump",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "legendary",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_JazzJackrabbit_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_JazzJackrabbit_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_JazzJackrabbit_L.webp"
+  },
+  {
+    "id": "162",
+    "name": "Gold Jackrabbit",
+    "parent": "CosmicThunderDoubleJump",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_JazzJackrabbit_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_JazzJackrabbit_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_JazzJackrabbit_Gold_L.webp"
+  },
+  {
+    "id": "163",
+    "name": "Cheat Master Jackrabbit",
+    "parent": "CosmicThunderDoubleJump",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_JazzJackrabbit_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_JazzJackrabbit_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_JazzJackrabbit_Cheatmaster_L.webp"
+  },
+  {
+    "id": "164",
+    "name": "Shadow",
+    "parent": "ReloadOverTime",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "epic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_L.webp"
+  },
+  {
+    "id": "165",
+    "name": "Cheat Master Shadow",
+    "parent": "ReloadOverTime",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Cheatmaster_L.webp"
+  },
+  {
+    "id": "166",
+    "name": "Gold Shadow",
+    "parent": "ReloadOverTime",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Scribe_Gold_L.webp"
+  },
+  {
+    "id": "167",
+    "name": "Bush",
+    "parent": "BushRanger",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BushRanger_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_BushRanger_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_BushRanger_L.webp"
+  },
+  {
+    "id": "168",
+    "name": "Cheat Master Bush",
+    "parent": "BushRanger",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BushRanger_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_BushRanger_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_BushRanger_Cheatmaster_L.webp"
+  },
+  {
+    "id": "169",
+    "name": "Gold Bush",
+    "parent": "BushRanger",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BushRanger_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_BushRanger_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_BushRanger_Gold_L.webp"
+  },
+  {
+    "id": "170",
+    "name": "Tails",
+    "parent": "NarrowFleaMonkey",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "epic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_L.webp"
+  },
+  {
+    "id": "171",
+    "name": "Cheat Master Tails",
+    "parent": "NarrowFleaMonkey",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Cheatmaster_L.webp"
+  },
+  {
+    "id": "172",
+    "name": "Gold Tails",
+    "parent": "NarrowFleaMonkey",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Monkey_Gold_L.webp"
+  },
+  {
+    "id": "173",
+    "name": "Killswitch",
+    "parent": "Killswitch",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "epic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Killswitch_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Killswitch_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Killswitch_L.webp"
+  },
+  {
+    "id": "174",
+    "name": "Cheat Master Killswitch",
+    "parent": "Killswitch",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Killswitch_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Killswitch_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Killswitch_Cheatmaster_L.webp"
+  },
+  {
+    "id": "175",
+    "name": "Gold Killswitch",
+    "parent": "Killswitch",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Killswitch_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Killswitch_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Killswitch_Gold_L.webp"
+  },
+  {
+    "id": "176",
+    "name": "Adventure",
+    "parent": "Dwarf",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Dwarf_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Dwarf_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Dwarf_L.webp"
+  },
+  {
+    "id": "177",
+    "name": "Cheat Master Adventure",
+    "parent": "Dwarf",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Dwarf_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Dwarf_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Dwarf_Cheatmaster_L.webp"
+  },
+  {
+    "id": "178",
+    "name": "Gold Adventure",
+    "parent": "Dwarf",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Dwarf_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Dwarf_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Dwarf_Gold_L.webp"
+  },
+  {
+    "id": "179",
+    "name": "Klombo",
+    "parent": "Klombo",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "mythic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Klombo_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Klombo_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Klombo_L.webp"
+  },
+  {
+    "id": "180",
+    "name": "Cheat Master Klombo",
+    "parent": "Klombo",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Klombo_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Klombo_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Klombo_Cheatmaster_L.webp"
+  },
+  {
+    "id": "181",
+    "name": "Gold Klombo",
+    "parent": "Klombo",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Klombo_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Klombo_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Klombo_Gold_L.webp"
+  },
+  {
+    "id": "182",
+    "name": "Jonesy",
+    "parent": "Jonesy",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Jonesy_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Jonesy_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Jonesy_L.webp"
+  },
+  {
+    "id": "183",
+    "name": "Cheat Master Jonesy",
+    "parent": "Jonesy",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Jonesy_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Jonesy_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Jonesy_Cheatmaster_L.webp"
+  },
+  {
+    "id": "184",
+    "name": "Gold Jonesy",
+    "parent": "Jonesy",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Jonesy_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Jonesy_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Jonesy_Gold_L.webp"
+  },
+  {
+    "id": "185",
+    "name": "Sonic",
+    "parent": "NarrowFlea",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "epic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_L.webp"
+  },
+  {
+    "id": "186",
+    "name": "Cheat Master Sonic",
+    "parent": "NarrowFlea",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Cheatmaster_L.webp"
+  },
+  {
+    "id": "187",
+    "name": "Gold Sonic",
+    "parent": "NarrowFlea",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_NarrowFlea_Obsidian_Gold_L.webp"
+  },
+  {
+    "id": "188",
+    "name": "Crown",
+    "parent": "Crown",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "mythic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Crown_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Crown_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Crown_L.webp"
+  },
+  {
+    "id": "189",
+    "name": "Cheat Master Crown",
+    "parent": "Crown",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Crown_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Crown_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Crown_Cheatmaster_L.webp"
+  },
+  {
+    "id": "190",
+    "name": "Gold Crown",
+    "parent": "Crown",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Crown_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Crown_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Crown_Gold_L.webp"
+  },
+  {
+    "id": "191",
+    "name": "8-Bit",
+    "parent": "8BitBlaster",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_EightBitBlaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_EightBitBlaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_EightBitBlaster_L.webp"
+  },
+  {
+    "id": "192",
+    "name": "Cheat Master 8-Bit",
+    "parent": "8BitBlaster",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_EightBitBlaster_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_EightBitBlaster_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_EightBitBlaster_Cheatmaster_L.webp"
+  },
+  {
+    "id": "193",
+    "name": "Gold 8-Bit",
+    "parent": "8BitBlaster",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_EightBitBlaster_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_EightBitBlaster_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_EightBitBlaster_Gold_L.webp"
+  },
+  {
+    "id": "194",
+    "name": "Storm Scout",
+    "parent": "StormScout",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "42",
+    "unreleased": true,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_StormScout_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_StormScout_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_StormScout_L.webp"
+  },
+  {
+    "id": "195",
+    "name": "Cheat Master Storm Scout",
+    "parent": "StormScout",
+    "rarity": "special",
+    "variant": "cheatmaster",
+    "season": "42",
+    "unreleased": true,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_StormScout_Cheatmaster_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_StormScout_Cheatmaster_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_StormScout_Cheatmaster_L.webp"
+  },
+  {
+    "id": "196",
+    "name": "Gold Storm Scout",
+    "parent": "StormScout",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "42",
+    "unreleased": true,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_StormScout_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_StormScout_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_StormScout_Gold_L.webp"
+  },
+  {
+    "id": "138",
+    "name": "John Wick",
+    "parent": "FillerGrunt",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "mythic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp",
+    "image_local": "images/T_Icon_Reload_FillerGrunt_icon_L.webp",
+    "filename": "T_Icon_Reload_FillerGrunt_icon_L.webp"
+  },
+  {
+    "id": "139",
+    "name": "Batman",
+    "parent": "Batman",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "1.44%",
+    "pills": [
+      "mythic",
+      "1.44%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Default_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Default_L.webp"
+  },
+  {
+    "id": "146",
+    "name": "Cube Batman",
+    "parent": "Batman",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.02%",
+    "pills": [
+      "special",
+      "0.02%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Cube_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Cube_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Cube_L.webp"
+  },
+  {
+    "id": "140",
+    "name": "Gold Batman",
+    "parent": "Batman",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Gold_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Gold_L.webp"
+  },
+  {
+    "id": "141",
+    "name": "Gummy Batman",
+    "parent": "Batman",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.1%",
+    "pills": [
+      "special",
+      "0.1%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Candy_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Candy_L.webp"
+  },
+  {
+    "id": "142",
+    "name": "Galaxy Batman",
+    "parent": "Batman",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.07%",
+    "pills": [
+      "special",
+      "0.07%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Galaxy_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Galaxy_L.webp"
+  },
+  {
+    "id": "145",
+    "name": "Holofoil Batman",
+    "parent": "Batman",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.34%",
+    "pills": [
+      "special",
+      "0.34%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Holofoil_L.webp",
+    "image_local": "images/T_Icon_BR_FossilMeal_Holofoil_L.webp",
+    "filename": "T_Icon_BR_FossilMeal_Holofoil_L.webp"
+  },
+  {
+    "id": "1",
+    "name": "Water",
+    "parent": "Water",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp"
+  },
+  {
+    "id": "4",
+    "name": "Gold Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp"
+  },
+  {
+    "id": "84",
+    "name": "Quack Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "quack",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Quack_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Quack_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Quack_ui_L.webp"
+  },
+  {
+    "id": "2",
+    "name": "Gummy Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp"
+  },
+  {
+    "id": "3",
+    "name": "Galaxy Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "76",
+    "name": "Gem Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp"
+  },
+  {
+    "id": "43",
+    "name": "Holofoil Water",
+    "parent": "Water",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp"
+  },
+  {
+    "id": "5",
+    "name": "Earth",
+    "parent": "Earth",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp"
+  },
+  {
+    "id": "86",
+    "name": "Cube Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.21%",
+    "pills": [
+      "special",
+      "0.21%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Cube_ui_L.webp"
+  },
+  {
+    "id": "8",
+    "name": "Gold Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp"
+  },
+  {
+    "id": "87",
+    "name": "Quack Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "quack",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Quack_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Quack_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Quack_ui_L.webp"
+  },
+  {
+    "id": "6",
+    "name": "Gummy Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp"
+  },
+  {
+    "id": "7",
+    "name": "Galaxy Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "45",
+    "name": "Gem Earth",
+    "parent": "Earth",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp"
+  },
+  {
+    "id": "9",
+    "name": "Fire",
+    "parent": "Spitfire",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp"
+  },
+  {
+    "id": "89",
+    "name": "Cube Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.21%",
+    "pills": [
+      "special",
+      "0.21%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Cube_ui_L.webp"
+  },
+  {
+    "id": "12",
+    "name": "Gold Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp"
+  },
+  {
+    "id": "90",
+    "name": "Quack Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "quack",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Quack_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Quack_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Quack_ui_L.webp"
+  },
+  {
+    "id": "10",
+    "name": "Gummy Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp"
+  },
+  {
+    "id": "11",
+    "name": "Galaxy Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "46",
+    "name": "Holofoil Fire",
+    "parent": "Spitfire",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp"
+  },
+  {
+    "id": "13",
+    "name": "Duck",
+    "parent": "Duck",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "6.48%",
+    "pills": [
+      "epic",
+      "6.48%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Default_L.webp",
+    "image_local": "images/T_Icon_BR_Duck_Default_L.webp",
+    "filename": "T_Icon_BR_Duck_Default_L.webp"
+  },
+  {
+    "id": "16",
+    "name": "Gold Duck",
+    "parent": "Duck",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Duck_Gold_L.webp",
+    "filename": "T_Icon_BR_Duck_Gold_L.webp"
+  },
+  {
+    "id": "14",
+    "name": "Gummy Duck",
+    "parent": "Duck",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_Duck_Candy_L.webp",
+    "filename": "T_Icon_BR_Duck_Candy_L.webp"
+  },
+  {
+    "id": "15",
+    "name": "Galaxy Duck",
+    "parent": "Duck",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_Duck_Galaxy_L.webp",
+    "filename": "T_Icon_BR_Duck_Galaxy_L.webp"
+  },
+  {
+    "id": "44",
+    "name": "Gem Duck",
+    "parent": "Duck",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.1%",
+    "pills": [
+      "special",
+      "0.1%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gem_L.webp",
+    "image_local": "images/T_Icon_BR_Duck_Gem_L.webp",
+    "filename": "T_Icon_BR_Duck_Gem_L.webp"
+  },
+  {
+    "id": "17",
+    "name": "Ghost",
+    "parent": "Ghost",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "5.25%",
+    "pills": [
+      "epic",
+      "5.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp"
+  },
+  {
+    "id": "20",
+    "name": "Gold Ghost",
+    "parent": "Ghost",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp"
+  },
+  {
+    "id": "18",
+    "name": "Gummy Ghost",
+    "parent": "Ghost",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp"
+  },
+  {
+    "id": "19",
+    "name": "Galaxy Ghost",
+    "parent": "Ghost",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp"
+  },
+  {
+    "id": "48",
+    "name": "Holofoil Ghost",
+    "parent": "Ghost",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "1.23%",
+    "pills": [
+      "special",
+      "1.23%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp"
+  },
+  {
+    "id": "21",
+    "name": "Dream",
+    "parent": "Sleepy",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "4.45%",
+    "pills": [
+      "legendary",
+      "4.45%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp"
+  },
+  {
+    "id": "99",
+    "name": "Cube Dream",
+    "parent": "Sleepy",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.04%",
+    "pills": [
+      "special",
+      "0.04%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Sleepy_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Sleepy_Cube_ui_L.webp"
+  },
+  {
+    "id": "24",
+    "name": "Gold Dream",
+    "parent": "Sleepy",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp"
+  },
+  {
+    "id": "22",
+    "name": "Gummy Dream",
+    "parent": "Sleepy",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp"
+  },
+  {
+    "id": "23",
+    "name": "Galaxy Dream",
+    "parent": "Sleepy",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "37",
+    "name": "Demon",
+    "parent": "Demon",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "6.48%",
+    "pills": [
+      "epic",
+      "6.48%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Default_L.webp",
+    "image_local": "images/T_Icon_BR_RedDemon_Default_L.webp",
+    "filename": "T_Icon_BR_RedDemon_Default_L.webp"
+  },
+  {
+    "id": "40",
+    "name": "Gold Demon",
+    "parent": "Demon",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_RedDemon_Gold_L.webp",
+    "filename": "T_Icon_BR_RedDemon_Gold_L.webp"
+  },
+  {
+    "id": "38",
+    "name": "Gummy Demon",
+    "parent": "Demon",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_RedDemon_Candy_L.webp",
+    "filename": "T_Icon_BR_RedDemon_Candy_L.webp"
+  },
+  {
+    "id": "39",
+    "name": "Galaxy Demon",
+    "parent": "Demon",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_RedDemon_Galaxy_L.webp",
+    "filename": "T_Icon_BR_RedDemon_Galaxy_L.webp"
+  },
+  {
+    "id": "47",
+    "name": "Gem Demon",
+    "parent": "Demon",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.1%",
+    "pills": [
+      "special",
+      "0.1%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gem_L.webp",
+    "image_local": "images/T_Icon_BR_RedDemon_Gem_L.webp",
+    "filename": "T_Icon_BR_RedDemon_Gem_L.webp"
+  },
+  {
+    "id": "25",
+    "name": "Punk",
+    "parent": "Punk",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "4.45%",
+    "pills": [
+      "legendary",
+      "4.45%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Punk_ui_L.webp"
+  },
+  {
+    "id": "106",
+    "name": "Cube Punk",
+    "parent": "Punk",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.04%",
+    "pills": [
+      "special",
+      "0.04%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Punk_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Punk_Cube_ui_L.webp"
+  },
+  {
+    "id": "28",
+    "name": "Gold Punk",
+    "parent": "Punk",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp"
+  },
+  {
+    "id": "26",
+    "name": "Gummy Punk",
+    "parent": "Punk",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp"
+  },
+  {
+    "id": "27",
+    "name": "Galaxy Punk",
+    "parent": "Punk",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "29",
+    "name": "King",
+    "parent": "King",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "5.25%",
+    "pills": [
+      "epic",
+      "5.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_King_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_King_ui_L.webp"
+  },
+  {
+    "id": "32",
+    "name": "Gold King",
+    "parent": "King",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp"
+  },
+  {
+    "id": "30",
+    "name": "Gummy King",
+    "parent": "King",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp"
+  },
+  {
+    "id": "31",
+    "name": "Galaxy King",
+    "parent": "King",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "73",
+    "name": "Holofoil King",
+    "parent": "King",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "1.23%",
+    "pills": [
+      "special",
+      "1.23%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp"
+  },
+  {
+    "id": "149",
+    "name": "Vini Jr.",
+    "parent": "CokeParmesan",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "2.14%",
+    "pills": [
+      "mythic",
+      "2.14%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp",
+    "image_local": "images/T_Icon_BR_CokeParmesan_Default_L.webp",
+    "filename": "T_Icon_BR_CokeParmesan_Default_L.webp"
+  },
+  {
+    "id": "41",
+    "name": "Burnt Peanut",
+    "parent": "BurntPeanut",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "2.14%",
+    "pills": [
+      "mythic",
+      "2.14%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp"
+  },
+  {
+    "id": "33",
+    "name": "Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "mythic",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp"
+  },
+  {
+    "id": "112",
+    "name": "Cube Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.000014%",
+    "pills": [
+      "special",
+      "0.000014%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Cube_ui_L.webp"
+  },
+  {
+    "id": "36",
+    "name": "Gold Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.00014%",
+    "pills": [
+      "special",
+      "0.00014%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp"
+  },
+  {
+    "id": "113",
+    "name": "Quack Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "quack",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Quack_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Quack_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Quack_ui_L.webp"
+  },
+  {
+    "id": "34",
+    "name": "Gummy Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.000085%",
+    "pills": [
+      "special",
+      "0.000085%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp"
+  },
+  {
+    "id": "35",
+    "name": "Galaxy Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.000056%",
+    "pills": [
+      "special",
+      "0.000056%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "82",
+    "name": "Gem Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.00001%",
+    "pills": [
+      "special",
+      "0.00001%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp"
+  },
+  {
+    "id": "111",
+    "name": "Holofoil Zero Point",
+    "parent": "ZeroPoint",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.00028%",
+    "pills": [
+      "special",
+      "0.00028%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_ZeroPoint_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_ZeroPoint_Holofoil_ui_L.webp"
+  },
+  {
+    "id": "58",
+    "name": "Fishy",
+    "parent": "Fishy",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp"
+  },
+  {
+    "id": "116",
+    "name": "Cube Fishy",
+    "parent": "Fishy",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.21%",
+    "pills": [
+      "special",
+      "0.21%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Cube_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fishy_Cube_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fishy_Cube_L.webp"
+  },
+  {
+    "id": "61",
+    "name": "Gold Fishy",
+    "parent": "Fishy",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.64%",
+    "pills": [
+      "special",
+      "0.64%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp"
+  },
+  {
+    "id": "59",
+    "name": "Gummy Fishy",
+    "parent": "Fishy",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp"
+  },
+  {
+    "id": "60",
+    "name": "Galaxy Fishy",
+    "parent": "Fishy",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "62",
+    "name": "Striker",
+    "parent": "Soccer",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "5.25%",
+    "pills": [
+      "epic",
+      "5.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp"
+  },
+  {
+    "id": "65",
+    "name": "Gold Striker",
+    "parent": "Soccer",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp"
+  },
+  {
+    "id": "63",
+    "name": "Gummy Striker",
+    "parent": "Soccer",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp"
+  },
+  {
+    "id": "64",
+    "name": "Galaxy Striker",
+    "parent": "Soccer",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp"
+  },
+  {
+    "id": "66",
+    "name": "Holofoil Striker",
+    "parent": "Soccer",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "1.23%",
+    "pills": [
+      "special",
+      "1.23%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp"
+  },
+  {
+    "id": "67",
+    "name": "Aura",
+    "parent": "Drifter",
+    "rarity": "epic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "6.48%",
+    "pills": [
+      "epic",
+      "6.48%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp"
+  },
+  {
+    "id": "71",
+    "name": "Gold Aura",
+    "parent": "Drifter",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.62%",
+    "pills": [
+      "special",
+      "0.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp"
+  },
+  {
+    "id": "68",
+    "name": "Gummy Aura",
+    "parent": "Drifter",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.37%",
+    "pills": [
+      "special",
+      "0.37%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp"
+  },
+  {
+    "id": "69",
+    "name": "Galaxy Aura",
+    "parent": "Drifter",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.25%",
+    "pills": [
+      "special",
+      "0.25%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "70",
+    "name": "Gem Aura",
+    "parent": "Drifter",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.08%",
+    "pills": [
+      "special",
+      "0.08%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp"
+  },
+  {
+    "id": "49",
+    "name": "Boss",
+    "parent": "Boss",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "4.45%",
+    "pills": [
+      "legendary",
+      "4.45%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Boss_ui_L.webp"
+  },
+  {
+    "id": "126",
+    "name": "Cube Boss",
+    "parent": "Boss",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.04%",
+    "pills": [
+      "special",
+      "0.04%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Cube_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Boss_Cube_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Boss_Cube_ui_L.webp"
+  },
+  {
+    "id": "50",
+    "name": "Gold Boss",
+    "parent": "Boss",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp"
+  },
+  {
+    "id": "51",
+    "name": "Gummy Boss",
+    "parent": "Boss",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp"
+  },
+  {
+    "id": "52",
+    "name": "Galaxy Boss",
+    "parent": "Boss",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "78",
+    "name": "Grim",
+    "parent": "Grim",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.15%",
+    "pills": [
+      "mythic",
+      "0.15%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Default_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Default_L.webp"
+  },
+  {
+    "id": "130",
+    "name": "Cube Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "cube",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Cube_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Cube_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Cube_L.webp"
+  },
+  {
+    "id": "81",
+    "name": "Gold Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.01%",
+    "pills": [
+      "special",
+      "0.01%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Gold_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Gold_L.webp"
+  },
+  {
+    "id": "79",
+    "name": "Gummy Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.01%",
+    "pills": [
+      "special",
+      "0.01%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Candy_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Candy_L.webp"
+  },
+  {
+    "id": "80",
+    "name": "Galaxy Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.01%",
+    "pills": [
+      "special",
+      "0.01%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Galaxy_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Galaxy_L.webp"
+  },
+  {
+    "id": "128",
+    "name": "Gem Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.00099%",
+    "pills": [
+      "special",
+      "0.00099%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gem_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Gem_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Gem_L.webp"
+  },
+  {
+    "id": "129",
+    "name": "Holofoil Grim",
+    "parent": "Grim",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Holofoil_L.webp",
+    "image_local": "images/T_Icon_BR_GrimReaper_Holofoil_L.webp",
+    "filename": "T_Icon_BR_GrimReaper_Holofoil_L.webp"
+  },
+  {
+    "id": "74",
+    "name": "Air",
+    "parent": "Air",
+    "rarity": "rare",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "rare",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Default_L.webp",
+    "image_local": "images/T_Icon_BR_Air_Default_L.webp",
+    "filename": "T_Icon_BR_Air_Default_L.webp"
+  },
+  {
+    "id": "42",
+    "name": "Gold Air",
+    "parent": "Air",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Gold_L.webp",
+    "image_local": "images/T_Icon_BR_Air_Gold_L.webp",
+    "filename": "T_Icon_BR_Air_Gold_L.webp"
+  },
+  {
+    "id": "72",
+    "name": "Gummy Air",
+    "parent": "Air",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Candy_L.webp",
+    "image_local": "images/T_Icon_BR_Air_Candy_L.webp",
+    "filename": "T_Icon_BR_Air_Candy_L.webp"
+  },
+  {
+    "id": "75",
+    "name": "Galaxy Air",
+    "parent": "Air",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Galaxy_L.webp",
+    "image_local": "images/T_Icon_BR_Air_Galaxy_L.webp",
+    "filename": "T_Icon_BR_Air_Galaxy_L.webp"
+  },
+  {
+    "id": "77",
+    "name": "Holofoil Air",
+    "parent": "Air",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.53%",
+    "pills": [
+      "special",
+      "0.53%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Holo_L.webp",
+    "image_local": "images/T_Icon_BR_Air_Holo_L.webp",
+    "filename": "T_Icon_BR_Air_Holo_L.webp"
+  },
+  {
+    "id": "53",
+    "name": "Seven",
+    "parent": "Seven",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "3.63%",
+    "pills": [
+      "legendary",
+      "3.63%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Seven_ui_L.webp"
+  },
+  {
+    "id": "56",
+    "name": "Gold Seven",
+    "parent": "Seven",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp"
+  },
+  {
+    "id": "54",
+    "name": "Gummy Seven",
+    "parent": "Seven",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp"
+  },
+  {
+    "id": "55",
+    "name": "Galaxy Seven",
+    "parent": "Seven",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "57",
+    "name": "Holofoil Seven",
+    "parent": "Seven",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.85%",
+    "pills": [
+      "special",
+      "0.85%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp"
+  },
+  {
+    "id": "150",
+    "name": "Ironmouse",
+    "parent": "PedicureAntacid",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "2.14%",
+    "pills": [
+      "mythic",
+      "2.14%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp",
+    "image_local": "images/T_Icon_BR_PedicureAntacid_L.webp",
+    "filename": "T_Icon_BR_PedicureAntacid_L.webp"
+  },
+  {
+    "id": "148",
+    "name": "Pollo",
+    "parent": "CompanyStargazer",
+    "rarity": "mythic",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "2.14%",
+    "pills": [
+      "mythic",
+      "2.14%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp",
+    "image_local": "images/T_Icon_BR_CompanyStargazer_Default_L.webp",
+    "filename": "T_Icon_BR_CompanyStargazer_Default_L.webp"
+  },
+  {
+    "id": "151",
+    "name": "Llama",
+    "parent": "Llama",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "4.45%",
+    "pills": [
+      "legendary",
+      "4.45%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Llama_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Llama_ui_L.webp"
+  },
+  {
+    "id": "152",
+    "name": "Gold Llama",
+    "parent": "Llama",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Llama_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Llama_Gold_ui_L.webp"
+  },
+  {
+    "id": "153",
+    "name": "Gummy Llama",
+    "parent": "Llama",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Llama_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Llama_Candy_ui_L.webp"
+  },
+  {
+    "id": "154",
+    "name": "Galaxy Llama",
+    "parent": "Llama",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Llama_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Llama_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "155",
+    "name": "Gem Llama",
+    "parent": "Llama",
+    "rarity": "special",
+    "variant": "gem",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0%",
+    "pills": [
+      "special",
+      "0%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gem_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Llama_Gem_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Llama_Gem_ui_L.webp"
+  },
+  {
+    "id": "156",
+    "name": "Peeky Peely",
+    "parent": "Peely",
+    "rarity": "legendary",
+    "variant": "base",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "4.62%",
+    "pills": [
+      "legendary",
+      "4.62%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Peely_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Peely_ui_L.webp"
+  },
+  {
+    "id": "157",
+    "name": "Gold Peeky Peely",
+    "parent": "Peely",
+    "rarity": "special",
+    "variant": "gold",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.43%",
+    "pills": [
+      "special",
+      "0.43%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Gold_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Peely_Gold_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Peely_Gold_ui_L.webp"
+  },
+  {
+    "id": "158",
+    "name": "Gummy Peeky Peely",
+    "parent": "Peely",
+    "rarity": "special",
+    "variant": "candy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.26%",
+    "pills": [
+      "special",
+      "0.26%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Candy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Peely_Candy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Peely_Candy_ui_L.webp"
+  },
+  {
+    "id": "159",
+    "name": "Galaxy Peeky Peely",
+    "parent": "Peely",
+    "rarity": "special",
+    "variant": "galaxy",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.17%",
+    "pills": [
+      "special",
+      "0.17%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Galaxy_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Peely_Galaxy_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Peely_Galaxy_ui_L.webp"
+  },
+  {
+    "id": "160",
+    "name": "Holofoil Peeky Peely",
+    "parent": "Peely",
+    "rarity": "special",
+    "variant": "holofoil",
+    "season": "41",
+    "unreleased": false,
+    "drop_chance": "0.85%",
+    "pills": [
+      "special",
+      "0.85%"
+    ],
+    "image_url": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp",
+    "image_local": "images/T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp",
+    "filename": "T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp"
+  }
+]
