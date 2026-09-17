@@ -1,6 +1,6 @@
-// OBS Widget Controller v2.0 with Dynamic NxM Grid, Themes, & Styling
+// OBS Widget Controller v2.0 with Dynamic NxM Grid, Themes, Cassette Mode & Unreleased Toggle
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get("mode") || "grid"; // grid | ticker | banner
+const mode = urlParams.get("mode") || "grid"; // grid | ticker | banner | cassette | disk
 const season = urlParams.get("season") || "42"; // '42' (C7 S4) by default, or 'all', '41'
 const lang = urlParams.get("lang") || "tr";
 const filterType = urlParams.get("filter") || "missing"; // 'missing', 'all', 'owned'
@@ -10,6 +10,7 @@ const rows = parseInt(urlParams.get("rows")) || 3; // 1, 2, 3
 const bgStyle = urlParams.get("bg") || "solid"; // 'solid', 'glass', 'transparent'
 const scale = urlParams.get("scale") || "md"; // 'sm', 'md', 'lg'
 const cycleInterval = parseInt(urlParams.get("interval")) || 7000; // ms
+const showUnreleased = (urlParams.get("unreleased") !== "0" && urlParams.get("unreleased") !== "false");
 
 let spritesData = [];
 let userState = {
@@ -19,6 +20,7 @@ let userState = {
 
 let currentGridPage = 0;
 let cycleTimer = null;
+let cassetteSpawnTimer = null;
 
 const OBS_I18N = {
     tr: {
@@ -27,7 +29,9 @@ const OBS_I18N = {
         mastered: "Mastered",
         missing: "Eksik",
         allDoneHeader: "🎉 TEBRİKLER!",
-        allDoneSub: "Tüm Sprite'lar toplandı!"
+        allDoneSub: "Tüm Sprite'lar toplandı!",
+        cassetteTitle: "SPRITES OVERRIDE",
+        cassetteMissingLabel: "KALAN EKSİK"
     },
     en: {
         trackerTitle: "Sprites Tracker",
@@ -35,7 +39,9 @@ const OBS_I18N = {
         mastered: "Mastered",
         missing: "Missing",
         allDoneHeader: "🎉 CONGRATULATIONS!",
-        allDoneSub: "All Sprites Collected!"
+        allDoneSub: "All Sprites Collected!",
+        cassetteTitle: "SPRITES OVERRIDE",
+        cassetteMissingLabel: "REMAINING MISSING"
     }
 };
 
@@ -43,7 +49,6 @@ const t = OBS_I18N[lang] || OBS_I18N.tr;
 const syncChannel = new BroadcastChannel("fortnite_sprites_sync");
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Apply Theme to DOM
     document.documentElement.setAttribute("data-theme", theme);
     document.body.className = `theme-${theme} scale-${scale}`;
 
@@ -101,6 +106,10 @@ function getActiveSprites() {
     if (season !== "all") {
         list = list.filter(s => s.season === season);
     }
+    // Filter unreleased if unreleased=0
+    if (!showUnreleased) {
+        list = list.filter(s => !s.unreleased);
+    }
     return list;
 }
 
@@ -127,6 +136,8 @@ function renderWidget() {
         renderTicker(root, missingSprites, activeSprites, total);
     } else if (mode === "banner") {
         renderBanner(root, ownedCount, masteredCount, missingCount, total, ownedPct);
+    } else if (mode === "cassette" || mode === "disk") {
+        renderCassette(root, ownedCount, masteredCount, missingCount, total, missingSprites, activeSprites);
     } else {
         renderDynamicGrid(root, activeSprites, missingSprites);
     }
@@ -284,7 +295,6 @@ function renderDynamicGrid(root, activeSprites, missingSprites) {
         </div>
     `;
 
-    // Setup auto-cycling if more than 1 page
     if (cycleTimer) clearInterval(cycleTimer);
     
     if (totalPages > 1) {
@@ -302,4 +312,73 @@ function renderDynamicGrid(root, activeSprites, missingSprites) {
             }
         }, cycleInterval);
     }
+}
+
+// 4. CASSETTE / DISK WIDGET MODE
+function renderCassette(root, ownedCount, masteredCount, missingCount, total, missingSprites, activeSprites) {
+    if (cycleTimer) clearInterval(cycleTimer);
+    if (cassetteSpawnTimer) clearInterval(cassetteSpawnTimer);
+
+    root.innerHTML = `
+        <div class="kaset-widget">
+            <img class="kaset-bg-image" src="/static/img/kaset.png" alt="Cassette Frame">
+            <div class="kaset-bar-mask"></div>
+            <div class="kaset-screen">
+                <div class="kaset-scanlines"></div>
+                <div class="kaset-top-glitch">${t.cassetteTitle}</div>
+                <div id="kasetParticles"></div>
+                <div class="kaset-center-hud">
+                    <div class="kaset-counter-text" id="kasetMissingCount">${missingCount}</div>
+                    <div class="kaset-counter-label">${t.cassetteMissingLabel} (${ownedCount}/${total})</div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Floating sprite glide logic
+    const pContainer = document.getElementById("kasetParticles");
+    const spritePool = missingSprites.length > 0 ? missingSprites : activeSprites;
+
+    if (!pContainer || spritePool.length === 0) return;
+
+    function spawnFloatingSprite() {
+        if (!document.getElementById("kasetParticles")) return;
+        const randomSprite = spritePool[Math.floor(Math.random() * spritePool.length)];
+        const img = document.createElement("img");
+        img.src = `/static/${randomSprite.image_local}`;
+        img.onerror = () => { img.src = randomSprite.image_url; };
+        img.className = "floating-kaset-sprite";
+
+        // Random starting position on the left/bottom
+        const startX = -15 + Math.random() * 20; // -15% to 5%
+        const startY = 15 + Math.random() * 55; // 15% to 70%
+        img.style.left = startX + "%";
+        img.style.top = startY + "%";
+        img.style.opacity = "0";
+        img.style.transition = "opacity 1.5s ease-in-out, left 12s linear, top 12s ease-in-out";
+
+        pContainer.appendChild(img);
+
+        // Glide across the screen to the right
+        setTimeout(() => {
+            img.style.opacity = "0.85";
+            const endX = 85 + Math.random() * 25; // glide across to right
+            const endY = 15 + Math.random() * 55;
+            img.style.left = endX + "%";
+            img.style.top = endY + "%";
+        }, 100);
+
+        // Fade out and remove
+        setTimeout(() => {
+            img.style.opacity = "0";
+            setTimeout(() => { img.remove(); }, 1800);
+        }, 10500);
+    }
+
+    // Spawn 3-4 initial sprites with staggered intervals
+    for (let i = 0; i < 4; i++) {
+        setTimeout(spawnFloatingSprite, i * 2200);
+    }
+
+    cassetteSpawnTimer = setInterval(spawnFloatingSprite, 3000);
 }

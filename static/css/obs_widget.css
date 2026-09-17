@@ -69,9 +69,9 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 /* Background Types */
@@ -310,7 +310,7 @@ body {
 }
 
 /* ========================================================
-   MODE 3: DYNAMIC ROTATING GRID (NxM)
+   MODE 3: DYNAMIC ROTATING GRID (NxM Layout)
    ======================================================== */
 .obs-grid-wrapper {
     display: flex;
@@ -469,3 +469,163 @@ body {
 .pill-uncommon { background: #00ff88; color: #050114; }
 .pill-special { background: linear-gradient(135deg, #00f0ff, #ff007b, #ffe600); color: #050114; }
 .pill-common { background: #7f8c8d; color: #fff; }
+
+/* ========================================================
+   MODE 4: CASSETTE / DISK WIDGET (KASET WIDGET)
+   ======================================================== */
+.kaset-widget {
+    position: relative;
+    height: 95vh;
+    max-height: 800px;
+    display: inline-block;
+    user-select: none;
+}
+
+.kaset-widget img.kaset-bg-image {
+    height: 100%;
+    width: auto;
+    display: block;
+    position: relative;
+    z-index: 10; /* Kaset çerçevesi EN ÖNDE durur */
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+/* Kaset Renkli Işıldayan Barı */
+.kaset-bar-mask {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 11; /* Kasetin hemen üstünde */
+    pointer-events: none;
+    background: linear-gradient(135deg, var(--neon-accent), var(--neon-cyan));
+    
+    -webkit-mask-image: url('/static/img/kaset_bar.png');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url('/static/img/kaset_bar.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    
+    filter: drop-shadow(0 0 15px var(--neon-cyan)) drop-shadow(0 0 25px var(--neon-accent));
+    animation: kaset-glow-pulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes kaset-glow-pulse {
+    0% { filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+    100% { filter: drop-shadow(0 0 25px var(--neon-accent)) drop-shadow(0 0 15px var(--neon-cyan)); }
+}
+
+/* Ekran (Kasetin ARKASINDA) */
+.kaset-screen {
+    position: absolute;
+    top: 32.4%;
+    left: 25.2%;
+    width: 51.2%;
+    height: 29.8%;
+    z-index: 1; /* Ekran kasetin ARKASINDA */
+    border-radius: 12px;
+    background: url('/static/img/bg.png') center/cover no-repeat;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 35px rgba(180, 0, 255, 0.5), inset 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+/* Kaset Üst Başlık Glitch */
+.kaset-top-glitch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    letter-spacing: 2px;
+    z-index: 6;
+    text-transform: uppercase;
+    text-shadow: 2px 0 8px var(--neon-accent), -2px 0 8px var(--neon-cyan);
+    white-space: nowrap;
+}
+
+/* Uçan Büyücükler Konteyneri */
+#kasetParticles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-kaset-sprite {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8)) drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+    animation: kaset-bob 5s infinite alternate ease-in-out;
+}
+
+@keyframes kaset-bob {
+    from { transform: translateY(-8px) scale(0.95); }
+    to { transform: translateY(8px) scale(1.05); }
+}
+
+/* Kaset Tarama Çizgileri */
+.kaset-scanlines {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.35) 2px,
+        rgba(0, 0, 0, 0.35) 4px
+    );
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Kaset Ortasındaki Sayaç */
+.kaset-center-hud {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.kaset-counter-text {
+    font-family: 'Share Tech Mono', 'Orbitron', monospace;
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 15px var(--neon-accent), 0 0 20px var(--neon-cyan);
+    line-height: 1;
+    font-style: italic;
+    animation: kaset-text-shake 0.35s infinite linear alternate-reverse;
+}
+
+@keyframes kaset-text-shake {
+    0% { transform: translate(1px, 0); }
+    100% { transform: translate(-1px, 0); }
+}
+
+.kaset-counter-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px var(--neon-cyan);
+    margin-top: 4px;
+    text-transform: uppercase;
+}

@@ -213,8 +213,18 @@
                         <label class="control-label" id="lblCustMode">Görünüm Modu</label>
                         <div class="control-pills">
                             <button class="ctrl-btn active" data-cust="mode" data-val="grid" onclick="setCustOption('mode', 'grid', this)">🃏 NxM Grid</button>
+                            <button class="ctrl-btn" data-cust="mode" data-val="cassette" onclick="setCustOption('mode', 'cassette', this)">📼 Kaset / Disk</button>
                             <button class="ctrl-btn" data-cust="mode" data-val="ticker" onclick="setCustOption('mode', 'ticker', this)">🎞️ Kayan Ticker</button>
                             <button class="ctrl-btn" data-cust="mode" data-val="banner" onclick="setCustOption('mode', 'banner', this)">📊 Banner / HUD</button>
+                        </div>
+                    </div>
+
+                    <!-- Unreleased Filter Option -->
+                    <div class="control-group">
+                        <label class="control-label" id="lblCustUnreleased">Unreleased (Yayınlanmamış) Sprite'lar</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn active" data-cust="unreleased" data-val="1" onclick="setCustOption('unreleased', '1', this)" id="btnCustUnrelShow">✅ Göster</button>
+                            <button class="ctrl-btn" data-cust="unreleased" data-val="0" onclick="setCustOption('unreleased', '0', this)" id="btnCustUnrelHide">❌ Gizle (Sadece Çıkanlar)</button>
                         </div>
                     </div>
 
@@ -242,7 +252,7 @@
                     </div>
 
                     <!-- Background Style -->
-                    <div class="control-group">
+                    <div class="control-group" id="grpBgStyle">
                         <label class="control-label" id="lblCustBg">Arka Plan Tarzı</label>
                         <div class="control-pills">
                             <button class="ctrl-btn active" data-cust="bg" data-val="solid" onclick="setCustOption('bg', 'solid', this)">🌌 Koyu Zemin</button>
@@ -262,7 +272,7 @@
                     </div>
 
                     <!-- Scale Size -->
-                    <div class="control-group">
+                    <div class="control-group" id="grpScale">
                         <label class="control-label" id="lblCustScale">Karakter & Kart Ölçeği</label>
                         <div class="control-pills">
                             <button class="ctrl-btn" data-cust="scale" data-val="sm" onclick="setCustOption('scale', 'sm', this)">Kompakt</button>

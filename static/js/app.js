@@ -1,4 +1,4 @@
-// Fortnite Sprites Manager Logic v2.0
+// Fortnite Sprites Manager Logic v2.1 with Cassette Widget & Unreleased Widget Control
 let spritesData = [];
 let userState = {
     owned: new Set(),
@@ -23,7 +23,8 @@ let custState = {
     rows: "3",
     bg: "solid",
     interval: "7000",
-    scale: "md"
+    scale: "md",
+    unreleased: "1" // "1" = show, "0" = hide
 };
 
 // Language Dictionary (Turkish & English)
@@ -75,6 +76,9 @@ const I18N = {
         // Customizer Modal
         modalCustomizerTitle: "🎛️ CANLI OBS WIDGET ÖZELLEŞTİRİCİ",
         lblCustMode: "Görünüm Modu",
+        lblCustUnreleased: "Unreleased (Yayınlanmamış) Sprite'lar",
+        btnCustUnrelShow: "✅ Göster",
+        btnCustUnrelHide: "❌ Gizle (Sadece Çıkanlar)",
         lblCustTheme: "Widget Teması",
         lblCustLayout: "Izgara Boyutu (Sütun x Satır)",
         lblCustBg: "Arka Plan Tarzı",
@@ -149,6 +153,9 @@ const I18N = {
         // Customizer Modal
         modalCustomizerTitle: "🎛️ LIVE OBS WIDGET CUSTOMIZER",
         lblCustMode: "Widget Display Mode",
+        lblCustUnreleased: "Unreleased Sprites",
+        btnCustUnrelShow: "✅ Show All",
+        btnCustUnrelHide: "❌ Hide Unreleased",
         lblCustTheme: "Widget Visual Theme",
         lblCustLayout: "Grid Size (Cols x Rows)",
         lblCustBg: "Background Style",
@@ -269,6 +276,9 @@ function applyLanguage(lang) {
     // Customizer strings
     setTxt("modalCustomizerTitle", t.modalCustomizerTitle);
     setTxt("lblCustMode", t.lblCustMode);
+    setTxt("lblCustUnreleased", t.lblCustUnreleased);
+    setTxt("btnCustUnrelShow", t.btnCustUnrelShow);
+    setTxt("btnCustUnrelHide", t.btnCustUnrelHide);
     setTxt("lblCustTheme", t.lblCustTheme);
     setTxt("lblCustLayout", t.lblCustLayout);
     setTxt("lblCustBg", t.lblCustBg);
@@ -339,7 +349,6 @@ function populateFilterDropdowns() {
 
 // Event Listeners
 function setupEventListeners() {
-    // Season buttons
     document.querySelectorAll(".season-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".season-btn").forEach(b => b.classList.remove("active"));
@@ -351,13 +360,11 @@ function setupEventListeners() {
         });
     });
 
-    // Search input
     const searchInput = document.getElementById("searchInput");
     if (searchInput) {
         searchInput.addEventListener("input", () => renderSprites());
     }
 
-    // Status tabs
     document.querySelectorAll(".tab-pill").forEach(tab => {
         tab.addEventListener("click", () => {
             document.querySelectorAll(".tab-pill").forEach(t => t.classList.remove("active"));
@@ -367,7 +374,6 @@ function setupEventListeners() {
         });
     });
 
-    // Dropdown filters
     ["parentFilter", "variantFilter", "rarityFilter", "chanceFilter", "sortFilter"].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
@@ -415,7 +421,6 @@ function resetAllFilters() {
     showToast("Filtreler sıfırlandı.");
 }
 
-// Click on Rarity Capsule to filter
 function filterByRarityCapsule(rarity) {
     const raritySelect = document.getElementById("rarityFilter");
     if (activeRarityFilter === rarity) {
@@ -489,7 +494,6 @@ function renderStats() {
     const pBar = document.getElementById("statProgressBar");
     if (pBar) pBar.style.width = `${ownedPct}%`;
 
-    // Render Rarity Capsules
     const rarityRow = document.getElementById("rarityBreakdownRow");
     if (rarityRow) {
         const rarities = ["mythic", "legendary", "epic", "rare", "uncommon", "special"];
@@ -517,10 +521,8 @@ function getFilteredSprites() {
     const searchVal = (document.getElementById("searchInput")?.value || "").toLowerCase().trim();
 
     return spritesData.filter(s => {
-        // 1. Season filter
         if (activeSeason !== "all" && s.season !== activeSeason) return false;
 
-        // 2. Status filter
         const isOwned = userState.owned.has(s.id);
         const isMastered = userState.mastered.has(s.id);
         if (activeStatusTab === "missing" && isOwned) return false;
@@ -529,16 +531,10 @@ function getFilteredSprites() {
         if (activeStatusTab === "unreleased" && !s.unreleased) return false;
         if (activeStatusTab === "released_missing" && (isOwned || s.unreleased)) return false;
 
-        // 3. Parent Family filter
         if (activeParentFilter !== "all" && s.parent !== activeParentFilter) return false;
-
-        // 4. Variant filter
         if (activeVariantFilter !== "all" && s.variant !== activeVariantFilter) return false;
-
-        // 5. Rarity filter
         if (activeRarityFilter !== "all" && (s.rarity || "").toLowerCase() !== activeRarityFilter) return false;
 
-        // 6. Drop Chance filter
         if (activeChanceFilter !== "all") {
             const pctMatch = (s.drop_chance || "").match(/([\d.]+)%/);
             const numPct = pctMatch ? parseFloat(pctMatch[1]) : 0;
@@ -547,7 +543,6 @@ function getFilteredSprites() {
             if (activeChanceFilter === "common" && numPct <= 15) return false;
         }
 
-        // 7. Search text
         if (searchVal) {
             const nameMatch = (s.name || "").toLowerCase().includes(searchVal);
             const parentMatch = (s.parent || "").toLowerCase().includes(searchVal);
@@ -576,7 +571,6 @@ function getFilteredSprites() {
     });
 }
 
-// Render Sprite Cards into Grid
 function renderSprites() {
     const grid = document.getElementById("spritesGrid");
     if (!grid) return;
@@ -633,14 +627,12 @@ function renderSprites() {
     }).join("");
 }
 
-// Card Click Shortcut: toggle owned
 function handleCardClick(event, id) {
     if (event.target.tagName === "INPUT" || event.target.tagName === "LABEL") return;
     const isOwned = userState.owned.has(id);
     toggleOwned(id, !isOwned);
 }
 
-// State Modifications
 function toggleOwned(id, isChecked) {
     if (isChecked) {
         userState.owned.add(id);
@@ -655,7 +647,7 @@ function toggleOwned(id, isChecked) {
 function toggleMastered(id, isChecked) {
     if (isChecked) {
         userState.mastered.add(id);
-        userState.owned.add(id); // Mastering implies owned
+        userState.owned.add(id);
     } else {
         userState.mastered.delete(id);
     }
@@ -734,7 +726,7 @@ function exportProgressJSON() {
         owned: Array.from(userState.owned),
         mastered: Array.from(userState.mastered),
         exported_at: new Date().toISOString(),
-        version: "2.0"
+        version: "2.1"
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -819,11 +811,15 @@ function setCustOption(key, val, btnEl) {
         }
     }
 
-    // Hide/show grid dimensions row if not grid
     const dimRow = document.getElementById("grpGridDimensions");
     const intervalRow = document.getElementById("grpInterval");
+    const scaleRow = document.getElementById("grpScale");
+    const bgRow = document.getElementById("grpBgStyle");
+
     if (dimRow) dimRow.style.display = custState.mode === "grid" ? "flex" : "none";
-    if (intervalRow) intervalRow.style.display = custState.mode === "grid" ? "flex" : "none";
+    if (intervalRow) intervalRow.style.display = (custState.mode === "grid" || custState.mode === "ticker") ? "flex" : "none";
+    if (scaleRow) scaleRow.style.display = custState.mode === "grid" ? "flex" : "none";
+    if (bgRow) bgRow.style.display = custState.mode !== "cassette" ? "flex" : "none";
 
     updateCustomizerPreview();
 }
@@ -850,17 +846,21 @@ function buildCustomObsUrl(relative = false) {
     params.set("season", activeSeason);
     params.set("lang", currentLang);
 
+    if (custState.unreleased === "0") {
+        params.set("unreleased", "0");
+    }
+
     if (custState.mode === "grid") {
         params.set("cols", custState.cols);
         params.set("rows", custState.rows);
         params.set("interval", custState.interval);
     }
 
-    if (custState.bg !== "solid") {
+    if (custState.bg !== "solid" && custState.mode !== "cassette") {
         params.set("bg", custState.bg);
     }
 
-    if (custState.scale !== "md") {
+    if (custState.scale !== "md" && custState.mode === "grid") {
         params.set("scale", custState.scale);
     }
 
@@ -888,7 +888,6 @@ function copyCustomObsUrl() {
     }
 }
 
-// Toast helper
 function showToast(msg) {
     let toast = document.querySelector(".toast");
     if (!toast) {
