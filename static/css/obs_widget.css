@@ -1,11 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
 
-:root {
-  --bg-void: #050114;
-  --neon-pink: #ff007b;
+/* ========================================================
+   THEME DEFINITIONS FOR OBS WIDGET
+   ======================================================== */
+:root, [data-theme="glitch"], body.theme-glitch {
+  --bg-widget-solid: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 60%, #050114 100%);
+  --bg-widget-glass: rgba(14, 7, 43, 0.75);
+  --bg-card: rgba(14, 7, 43, 0.85);
+  --neon-accent: #ff007b;
   --neon-cyan: #00f0ff;
   --neon-yellow: #ffe600;
   --neon-green: #00ff88;
+  --widget-border: 2px solid #ff007b;
+  --box-shadow: 0 0 35px rgba(255, 0, 123, 0.45), 0 0 15px rgba(0, 240, 255, 0.35);
+  --card-border: 1.5px solid rgba(0, 240, 255, 0.3);
+}
+
+[data-theme="classic"], body.theme-classic {
+  --bg-widget-solid: radial-gradient(circle at 50% 35%, #152c6b 0%, #0c183b 60%, #070b19 100%);
+  --bg-widget-glass: rgba(16, 28, 61, 0.75);
+  --bg-card: rgba(16, 28, 61, 0.85);
+  --neon-accent: #00d2ff;
+  --neon-cyan: #9d4edd;
+  --neon-yellow: #ffd166;
+  --neon-green: #06d6a0;
+  --widget-border: 2px solid #00d2ff;
+  --box-shadow: 0 0 30px rgba(0, 210, 255, 0.45), 0 0 15px rgba(157, 78, 221, 0.35);
+  --card-border: 1.5px solid rgba(0, 210, 255, 0.35);
+}
+
+[data-theme="gold"], body.theme-gold {
+  --bg-widget-solid: radial-gradient(circle at 50% 35%, #3d3012 0%, #1a1408 60%, #0b0904 100%);
+  --bg-widget-glass: rgba(28, 23, 12, 0.8);
+  --bg-card: rgba(28, 23, 12, 0.9);
+  --neon-accent: #ffd700;
+  --neon-cyan: #d4af37;
+  --neon-yellow: #ffea79;
+  --neon-green: #e6b800;
+  --widget-border: 2px solid #ffd700;
+  --box-shadow: 0 0 30px rgba(255, 215, 0, 0.45), 0 0 15px rgba(212, 175, 55, 0.35);
+  --card-border: 1.5px solid rgba(255, 215, 0, 0.35);
+}
+
+[data-theme="stealth"], body.theme-stealth {
+  --bg-widget-solid: radial-gradient(circle at 50% 35%, #1f2433 0%, #12141c 60%, #090a0f 100%);
+  --bg-widget-glass: rgba(24, 27, 38, 0.75);
+  --bg-card: rgba(24, 27, 38, 0.85);
+  --neon-accent: #38bdf8;
+  --neon-cyan: #64748b;
+  --neon-yellow: #f8fafc;
+  --neon-green: #10b981;
+  --widget-border: 2px solid #38bdf8;
+  --box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+  --card-border: 1.5px solid rgba(100, 116, 139, 0.35);
 }
 
 * {
@@ -24,16 +71,21 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 8px;
 }
 
+/* Background Types */
+.bg-solid { background: var(--bg-widget-solid) !important; }
+.bg-glass { background: var(--bg-widget-glass) !important; backdrop-filter: blur(10px); }
+.bg-transparent { background: transparent !important; box-shadow: none !important; border-color: rgba(255,255,255,0.15) !important; }
+
 /* ========================================================
-   MODE 1: STREAM PROGRESS BANNER / HUD (GLITCH THEME)
+   MODE 1: STREAM PROGRESS BANNER / HUD
    ======================================================== */
 .obs-banner-container {
     position: relative;
-    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 55%, #050114 100%);
-    border: 2px solid var(--neon-pink);
+    background: var(--bg-widget-solid);
+    border: var(--widget-border);
     border-radius: 8px;
     padding: 14px 18px;
     display: flex;
@@ -41,9 +93,7 @@ body {
     gap: 10px;
     min-width: 380px;
     max-width: 490px;
-    box-shadow: 0 0 30px rgba(255, 0, 123, 0.45), 
-                0 0 15px rgba(0, 240, 255, 0.35),
-                inset 0 0 25px rgba(0, 0, 0, 0.85);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
 }
 
@@ -51,7 +101,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 0, 123, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 6px;
 }
 
@@ -64,13 +114,13 @@ body {
 .banner-icon {
     width: 32px;
     height: 32px;
-    background: linear-gradient(135deg, var(--neon-pink), var(--neon-cyan));
+    background: linear-gradient(135deg, var(--neon-accent), var(--neon-cyan));
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 17px;
-    box-shadow: 0 0 12px var(--neon-pink);
+    box-shadow: 0 0 12px var(--neon-accent);
     clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
 }
 
@@ -82,7 +132,7 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #ffffff;
-    text-shadow: -1px 0 var(--neon-cyan), 1px 0 var(--neon-pink);
+    text-shadow: -1px 0 var(--neon-cyan), 1px 0 var(--neon-accent);
 }
 
 .banner-count {
@@ -95,16 +145,16 @@ body {
 
 .banner-progress-bar {
     height: 8px;
-    background: #050114;
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     overflow: hidden;
-    border: 1px solid rgba(0, 240, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
 }
 
 .banner-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff007b, #00f0ff, #00ff88);
+    background: linear-gradient(90deg, var(--neon-accent), var(--neon-cyan), var(--neon-green));
     width: 0%;
     transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 0 12px var(--neon-cyan);
@@ -121,10 +171,10 @@ body {
 }
 
 .stat-highlight-owned { color: var(--neon-green); text-shadow: 0 0 8px rgba(0, 255, 136, 0.5); }
-.stat-highlight-missing { color: var(--neon-pink); text-shadow: 0 0 8px rgba(255, 0, 123, 0.5); }
+.stat-highlight-missing { color: var(--neon-accent); text-shadow: 0 0 8px rgba(255, 0, 123, 0.5); }
 
 /* ========================================================
-   MODE 2: TICKER / CAROUSEL (GLITCH THEME)
+   MODE 2: TICKER / CAROUSEL
    ======================================================== */
 .obs-ticker-viewport {
     width: 100vw;
@@ -144,8 +194,6 @@ body {
     will-change: transform;
 }
 
-.obs-ticker-track:hover { animation-play-state: paused; }
-
 @keyframes smoothTickerScroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -154,15 +202,15 @@ body {
 .ticker-card {
     width: 154px;
     height: 205px;
-    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 65%, #050114 100%);
-    border: 1.5px solid rgba(0, 240, 255, 0.35);
+    background: var(--bg-widget-solid);
+    border: var(--card-border);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(255, 0, 123, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
 .ticker-card.is-owned {
@@ -178,7 +226,7 @@ body {
 .ticker-card-art {
     width: 100%;
     height: 125px;
-    background: radial-gradient(circle at 50% 40%, #23125e 0%, #0d0628 85%);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +254,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
     color: var(--neon-cyan);
-    border: 1px solid rgba(0, 240, 255, 0.5);
+    border: 1px solid var(--neon-cyan);
     letter-spacing: 0.4px;
 }
 
@@ -215,8 +263,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    background: #08031d;
-    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex: 1;
     justify-content: space-between;
 }
@@ -255,52 +303,59 @@ body {
     font-size: 9.5px;
     font-weight: 700;
     color: var(--neon-cyan);
-    background: #050114;
+    background: rgba(0, 0, 0, 0.6);
     padding: 1.5px 5px;
     border-radius: 3px;
-    border: 1px solid rgba(0, 240, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* ========================================================
-   MODE 3: 3x3 GLITCH ROTATING GRID (OVERRIDE THEME)
+   MODE 3: DYNAMIC ROTATING GRID (NxM)
    ======================================================== */
-.obs-3x3-wrapper {
+.obs-grid-wrapper {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 480px;
+    width: 100%;
+    max-width: 600px;
 }
 
-.obs-3x3-grid {
+.obs-dyn-grid {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
-    background: radial-gradient(circle at 50% 35%, #180d46 0%, #0d0628 60%, #050114 100%);
-    border: 2px solid var(--neon-pink);
+    background: var(--bg-widget-solid);
+    border: var(--widget-border);
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 0 35px rgba(255, 0, 123, 0.45), 
-                0 0 15px rgba(0, 240, 255, 0.35),
-                inset 0 0 25px rgba(0, 0, 0, 0.85);
+    box-shadow: var(--box-shadow);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.obs-3x3-grid.fade-out {
+/* Dynamic Grid Column Formats */
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr) !important; }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr) !important; }
+
+/* Dynamic Grid Row Formats */
+.grid-rows-1 { grid-template-rows: repeat(1, 1fr) !important; }
+.grid-rows-2 { grid-template-rows: repeat(2, 1fr) !important; }
+.grid-rows-3 { grid-template-rows: repeat(3, 1fr) !important; }
+
+.obs-dyn-grid.fade-out {
     opacity: 0;
     transform: scale(0.96);
 }
 
-.obs-3x3-grid.fade-in {
+.obs-dyn-grid.fade-in {
     opacity: 1;
     transform: scale(1);
 }
 
-/* 3x3 Big Character Card */
-.obs-3x3-card {
-    background: rgba(14, 7, 43, 0.85);
-    border: 1.5px solid rgba(0, 240, 255, 0.3);
+/* Character Card */
+.obs-dyn-card {
+    background: var(--bg-card);
+    border: var(--card-border);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -314,17 +369,17 @@ body {
     transition: all 0.25s ease;
 }
 
-.obs-3x3-card.is-owned {
+.obs-dyn-card.is-owned {
   border-color: var(--neon-green) !important;
   box-shadow: 0 0 16px rgba(0, 255, 136, 0.5);
 }
 
-.obs-3x3-card.is-mastered {
+.obs-dyn-card.is-mastered {
   border-color: var(--neon-cyan) !important;
   box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
 }
 
-.obs-3x3-img-wrap {
+.obs-dyn-img-wrap {
     width: 100%;
     height: 94px;
     display: flex;
@@ -333,7 +388,7 @@ body {
     position: relative;
 }
 
-.obs-3x3-img {
+.obs-dyn-img {
     width: 90px;
     height: 90px;
     object-fit: contain;
@@ -341,7 +396,16 @@ body {
     transition: transform 0.2s ease;
 }
 
-.obs-3x3-meta {
+/* Card Scaling Options */
+.scale-sm .obs-dyn-card { height: 110px; padding: 4px; }
+.scale-sm .obs-dyn-img { width: 68px; height: 68px; }
+.scale-sm .obs-dyn-img-wrap { height: 72px; }
+
+.scale-lg .obs-dyn-card { height: 175px; padding: 8px; }
+.scale-lg .obs-dyn-img { width: 115px; height: 115px; }
+.scale-lg .obs-dyn-img-wrap { height: 118px; }
+
+.obs-dyn-meta {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -349,7 +413,7 @@ body {
     gap: 2px;
 }
 
-.obs-3x3-name {
+.obs-dyn-name {
     font-family: 'Rajdhani', sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -362,7 +426,7 @@ body {
     opacity: 0.9;
 }
 
-.obs-3x3-badge {
+.obs-dyn-badge {
     font-family: 'Orbitron', sans-serif;
     font-size: 7.5px;
     font-weight: 900;
@@ -373,7 +437,7 @@ body {
 }
 
 /* Pagination Dots */
-.obs-3x3-pagination {
+.obs-dyn-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -385,8 +449,8 @@ body {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #1d114a;
-    border: 1px solid rgba(0, 240, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--neon-cyan);
     transition: all 0.3s ease;
 }
 
@@ -398,10 +462,10 @@ body {
 }
 
 /* Rarity Badge Colors */
-.pill-mythic { background: var(--neon-yellow); color: #050114; }
+.pill-mythic { background: #ffe600; color: #050114; }
 .pill-legendary { background: #ff8500; color: #fff; }
 .pill-epic { background: #b5179e; color: #fff; }
 .pill-rare { background: #00b4d8; color: #fff; }
-.pill-uncommon { background: var(--neon-green); color: #050114; }
+.pill-uncommon { background: #00ff88; color: #050114; }
 .pill-special { background: linear-gradient(135deg, #00f0ff, #ff007b, #ffe600); color: #050114; }
 .pill-common { background: #7f8c8d; color: #fff; }

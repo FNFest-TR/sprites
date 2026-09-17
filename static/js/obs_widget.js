@@ -1,10 +1,15 @@
-// OBS Widget Controller with 3x3 Rotating Grid & Large Character Focus
+// OBS Widget Controller v2.0 with Dynamic NxM Grid, Themes, & Styling
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get("mode") || "banner"; // banner | ticker | grid
+const mode = urlParams.get("mode") || "grid"; // grid | ticker | banner
 const season = urlParams.get("season") || "42"; // '42' (C7 S4) by default, or 'all', '41'
 const lang = urlParams.get("lang") || "tr";
 const filterType = urlParams.get("filter") || "missing"; // 'missing', 'all', 'owned'
-const cycleInterval = parseInt(urlParams.get("interval")) || 7000; // 7 seconds per page
+const theme = urlParams.get("theme") || "glitch"; // 'glitch', 'classic', 'gold', 'stealth'
+const cols = parseInt(urlParams.get("cols")) || 3; // 2, 3, 4
+const rows = parseInt(urlParams.get("rows")) || 3; // 1, 2, 3
+const bgStyle = urlParams.get("bg") || "solid"; // 'solid', 'glass', 'transparent'
+const scale = urlParams.get("scale") || "md"; // 'sm', 'md', 'lg'
+const cycleInterval = parseInt(urlParams.get("interval")) || 7000; // ms
 
 let spritesData = [];
 let userState = {
@@ -12,7 +17,7 @@ let userState = {
     mastered: new Set()
 };
 
-let current3x3Page = 0;
+let currentGridPage = 0;
 let cycleTimer = null;
 
 const OBS_I18N = {
@@ -38,6 +43,10 @@ const t = OBS_I18N[lang] || OBS_I18N.tr;
 const syncChannel = new BroadcastChannel("fortnite_sprites_sync");
 
 document.addEventListener("DOMContentLoaded", async () => {
+    // Apply Theme to DOM
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.className = `theme-${theme} scale-${scale}`;
+
     await loadInitialData();
     renderWidget();
     initSync();
@@ -116,10 +125,10 @@ function renderWidget() {
 
     if (mode === "ticker") {
         renderTicker(root, missingSprites, activeSprites, total);
-    } else if (mode === "grid") {
-        render3x3Grid(root, activeSprites, missingSprites);
-    } else {
+    } else if (mode === "banner") {
         renderBanner(root, ownedCount, masteredCount, missingCount, total, ownedPct);
+    } else {
+        renderDynamicGrid(root, activeSprites, missingSprites);
     }
 }
 
@@ -128,13 +137,13 @@ function renderBanner(root, owned, mastered, missing, total, pct) {
     const seasonTag = season === "42" ? "C7 S4" : (season === "41" ? "C7 S3" : "");
 
     root.innerHTML = `
-        <div class="obs-banner-container">
+        <div class="obs-banner-container bg-${bgStyle}">
             <div class="banner-header">
                 <div class="banner-brand">
                     <div class="banner-icon">⚡</div>
                     <div>
                         <div class="banner-title">${t.trackerTitle}</div>
-                        ${seasonTag ? `<div style="font-size:10px; font-weight:800; color:#00e5ff;">${seasonTag}</div>` : ''}
+                        ${seasonTag ? `<div style="font-size:10px; font-weight:800; color:var(--neon-cyan);">${seasonTag}</div>` : ''}
                     </div>
                 </div>
                 <div class="banner-count">${owned} / ${total}</div>
@@ -164,7 +173,7 @@ function renderTicker(root, missingSprites, allActive, total) {
 
     if (list.length === 0) {
         root.innerHTML = `
-            <div class="obs-banner-container">
+            <div class="obs-banner-container bg-${bgStyle}">
                 <div style="font-weight:800; color:#2ecc71; font-size:14px;">${t.allDoneHeader} ${t.allDoneSub}</div>
             </div>
         `;
@@ -186,7 +195,7 @@ function renderTicker(root, missingSprites, allActive, total) {
         }
 
         return `
-            <div class="ticker-card ${isOwned ? 'is-owned' : ''} ${isMastered ? 'is-mastered' : ''}">
+            <div class="ticker-card bg-${bgStyle} ${isOwned ? 'is-owned' : ''} ${isMastered ? 'is-mastered' : ''}">
                 <div class="ticker-card-art">
                     ${variantBadgeText ? `<span class="ticker-variant-badge">${variantBadgeText}</span>` : ''}
                     <img class="ticker-card-img" src="/static/${s.image_local}" onerror="this.src='${s.image_url}'" alt="${s.name}">
@@ -211,8 +220,8 @@ function renderTicker(root, missingSprites, allActive, total) {
     `;
 }
 
-// 3. 3x3 DYNAMIC ROTATING GRID WITH HUGE CHARACTER FOCUS
-function render3x3Grid(root, activeSprites, missingSprites) {
+// 3. DYNAMIC ROTATING GRID (NxM Layout)
+function renderDynamicGrid(root, activeSprites, missingSprites) {
     let list = missingSprites;
     if (filterType === "all") {
         list = activeSprites;
@@ -222,7 +231,7 @@ function render3x3Grid(root, activeSprites, missingSprites) {
 
     if (list.length === 0) {
         root.innerHTML = `
-            <div class="obs-banner-container">
+            <div class="obs-banner-container bg-${bgStyle}">
                 <div style="font-weight:800; color:#2ecc71; font-size:14px;">${t.allDoneHeader} ${t.allDoneSub}</div>
             </div>
         `;
@@ -230,13 +239,12 @@ function render3x3Grid(root, activeSprites, missingSprites) {
         return;
     }
 
-    const pageSize = 9;
+    const pageSize = Math.max(1, cols * rows);
     const totalPages = Math.ceil(list.length / pageSize);
 
-    // Keep current page within bounds
-    if (current3x3Page >= totalPages) current3x3Page = 0;
+    if (currentGridPage >= totalPages) currentGridPage = 0;
 
-    const startIdx = current3x3Page * pageSize;
+    const startIdx = currentGridPage * pageSize;
     const pageItems = list.slice(startIdx, startIdx + pageSize);
 
     const cardsHtml = pageItems.map(s => {
@@ -244,54 +252,53 @@ function render3x3Grid(root, activeSprites, missingSprites) {
         const isMastered = userState.mastered.has(s.id);
 
         return `
-            <div class="obs-3x3-card ${isOwned ? 'is-owned' : ''} ${isMastered ? 'is-mastered' : ''}" id="card-3x3-${s.id}">
-                <div class="obs-3x3-img-wrap">
-                    <img class="obs-3x3-img" src="/static/${s.image_local}" onerror="this.src='${s.image_url}'" alt="${s.name}">
+            <div class="obs-dyn-card ${isOwned ? 'is-owned' : ''} ${isMastered ? 'is-mastered' : ''}" id="card-dyn-${s.id}">
+                <div class="obs-dyn-img-wrap">
+                    <img class="obs-dyn-img" src="/static/${s.image_local}" onerror="this.src='${s.image_url}'" alt="${s.name}">
                 </div>
-                <div class="obs-3x3-meta">
-                    <div class="obs-3x3-name" title="${s.name}">${s.name}</div>
-                    <span class="obs-3x3-badge pill-${s.rarity}">${s.rarity}</span>
+                <div class="obs-dyn-meta">
+                    <div class="obs-dyn-name" title="${s.name}">${s.name}</div>
+                    <span class="obs-dyn-badge pill-${s.rarity}">${s.rarity}</span>
                 </div>
             </div>
         `;
     }).join("");
 
-    // Generate pagination dots if more than 1 page
     let dotsHtml = "";
     if (totalPages > 1) {
         dotsHtml = `
-            <div class="obs-3x3-pagination">
+            <div class="obs-dyn-pagination">
                 ${Array.from({ length: totalPages }).map((_, idx) => `
-                    <div class="obs-page-dot ${idx === current3x3Page ? 'active' : ''}"></div>
+                    <div class="obs-page-dot ${idx === currentGridPage ? 'active' : ''}"></div>
                 `).join("")}
             </div>
         `;
     }
 
     root.innerHTML = `
-        <div class="obs-3x3-wrapper">
-            <div class="obs-3x3-grid fade-in" id="grid3x3Container">
+        <div class="obs-grid-wrapper">
+            <div class="obs-dyn-grid grid-cols-${cols} grid-rows-${rows} bg-${bgStyle} fade-in" id="gridDynContainer">
                 ${cardsHtml}
             </div>
             ${dotsHtml}
         </div>
     `;
 
-    // Setup auto-cycling if > 1 page
+    // Setup auto-cycling if more than 1 page
     if (cycleTimer) clearInterval(cycleTimer);
     
     if (totalPages > 1) {
         cycleTimer = setInterval(() => {
-            const gridEl = document.getElementById("grid3x3Container");
+            const gridEl = document.getElementById("gridDynContainer");
             if (gridEl) {
                 gridEl.classList.add("fade-out");
                 setTimeout(() => {
-                    current3x3Page = (current3x3Page + 1) % totalPages;
-                    render3x3Grid(root, activeSprites, missingSprites);
+                    currentGridPage = (currentGridPage + 1) % totalPages;
+                    renderDynamicGrid(root, activeSprites, missingSprites);
                 }, 400);
             } else {
-                current3x3Page = (current3x3Page + 1) % totalPages;
-                render3x3Grid(root, activeSprites, missingSprites);
+                currentGridPage = (currentGridPage + 1) % totalPages;
+                renderDynamicGrid(root, activeSprites, missingSprites);
             }
         }, cycleInterval);
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="glitch">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,14 +28,22 @@
             </div>
 
             <div class="header-actions">
+                <!-- Theme Switcher Selector -->
+                <div class="theme-selector">
+                    <button class="theme-btn active" data-theme="glitch" onclick="setTheme('glitch')">👾 GLITCH</button>
+                    <button class="theme-btn" data-theme="classic" onclick="setTheme('classic')">⚡ CLASSIC</button>
+                    <button class="theme-btn" data-theme="gold" onclick="setTheme('gold')">👑 GOLD</button>
+                    <button class="theme-btn" data-theme="stealth" onclick="setTheme('stealth')">🌑 STEALTH</button>
+                </div>
+
                 <!-- Language Switcher -->
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="tr" onclick="setLanguage('tr')">TR</button>
                     <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
                 </div>
 
-                <button class="btn btn-obs" onclick="openObsModal()">
-                    <span id="txtBtnObs">📺 OBS WIDGET</span>
+                <button class="btn btn-obs" onclick="openObsCustomizerModal()">
+                    <span id="txtBtnObs">🎛️ CANLI WIDGET AYARLA</span>
                 </button>
                 <button class="btn btn-primary" id="btnRefreshScraper" onclick="triggerScraperRefresh()">
                     <span id="txtBtnRefresh">🔄 FORTNITE.GG GÜNCELLE</span>
@@ -93,16 +101,21 @@
                 </div>
             </div>
         </div>
+
+        <!-- Rarity Progress Breakdown Capsules -->
+        <div class="rarity-breakdown-row" id="rarityBreakdownRow">
+            <!-- Dynamically populated rarity capsules -->
+        </div>
     </section>
 
-    <!-- Filter & Search Toolbar -->
+    <!-- Filter & Search Toolbar (Expanded Matrix) -->
     <section class="filter-toolbar">
         <div class="filter-box">
-            <!-- Row 1: Search & Season Pills & Select Action -->
+            <!-- Row 1: Search & Season Pills & Select Action & Clear -->
             <div class="filter-row-top">
                 <div class="search-input-wrap">
                     <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Sprite veya Varyant ara...">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Sprite, varyant veya aile ara...">
                 </div>
 
                 <!-- Season Pills -->
@@ -112,26 +125,43 @@
                     <button class="season-btn active" data-season="42" id="btnSeasonC7S4">C7 S4</button>
                 </div>
 
-                <div>
+                <div style="display: flex; gap: 6px;">
                     <button class="btn btn-outline" onclick="selectAllFiltered()">
                         <span id="txtSelectFiltered">SEÇİLENLERİ 'OWNED' YAP</span>
+                    </button>
+                    <button class="btn btn-outline" onclick="resetAllFilters()" title="Filtreleri Sıfırla">
+                        <span>🔄 SIFIRLA</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Row 2: Status tabs, Rarity, Variant, Sort -->
-            <div class="filter-row-bottom">
+            <!-- Row 2: Status tabs -->
+            <div class="filter-row-mid">
                 <div class="tab-pills">
                     <button class="tab-pill active" data-status="all" id="tabAll">TÜMÜ</button>
                     <button class="tab-pill pill-missing" data-status="missing" id="tabMissing">❌ EKSİKLER</button>
                     <button class="tab-pill pill-owned" data-status="owned" id="tabOwned">✔ BENDE OLANLAR</button>
                     <button class="tab-pill pill-mastered" data-status="mastered" id="tabMastered">⭐ MASTERED</button>
                     <button class="tab-pill" data-status="unreleased" id="tabUnreleased">🔒 UNRELEASED</button>
+                    <button class="tab-pill" data-status="released_missing" id="tabReleasedMissing">✨ ÇIKMIŞ EKSİKLER</button>
                 </div>
+            </div>
+
+            <!-- Row 3: Detailed Dropdowns (Parent Family, Variant, Rarity, Drop Chance, Sort) -->
+            <div class="filter-row-bottom">
+                <!-- Parent Character Family Filter -->
+                <select id="parentFilter" class="select-ctrl">
+                    <option value="all" id="optParentAll">👥 Tüm Karakter Aileleri</option>
+                </select>
+
+                <!-- Variant Filter -->
+                <select id="variantFilter" class="select-ctrl">
+                    <option value="all" id="optVariantAll">🎨 Tüm Varyantlar</option>
+                </select>
 
                 <!-- Rarity Filter -->
                 <select id="rarityFilter" class="select-ctrl">
-                    <option value="all" id="optRarityAll">Tüm Nadirlikler</option>
+                    <option value="all" id="optRarityAll">💎 Tüm Nadirlikler</option>
                     <option value="mythic">Mythic</option>
                     <option value="special">Special</option>
                     <option value="legendary">Legendary</option>
@@ -140,9 +170,12 @@
                     <option value="uncommon">Uncommon</option>
                 </select>
 
-                <!-- Variant Filter -->
-                <select id="variantFilter" class="select-ctrl">
-                    <option value="all">Tüm Varyantlar</option>
+                <!-- Drop Chance Filter -->
+                <select id="chanceFilter" class="select-ctrl">
+                    <option value="all" id="optChanceAll">🎲 Tüm Düşme Oranları</option>
+                    <option value="ultra_rare" id="optChanceUltra">Çok Nadir (< %5)</option>
+                    <option value="rare" id="optChanceRare">Nadir (%5 - %15)</option>
+                    <option value="common" id="optChanceCommon">Yaygın (> %15)</option>
                 </select>
 
                 <!-- Sort Filter -->
@@ -150,6 +183,7 @@
                     <option value="id" id="optSortId">Sırala: Varsayılan (ID)</option>
                     <option value="name" id="optSortName">Sırala: İsim (A-Z)</option>
                     <option value="rarity" id="optSortRarity">Sırala: Nadirlik (Yüksek-Düşük)</option>
+                    <option value="chance" id="optSortChance">Sırala: Düşme Oranı (En Nadir)</option>
                     <option value="missing_first" id="optSortMissing">Sırala: Önce Eksikler</option>
                 </select>
             </div>
@@ -163,37 +197,96 @@
         </div>
     </main>
 
-    <!-- OBS Link Helper Modal -->
-    <div class="modal-backdrop" id="obsModal" onclick="if(event.target===this) closeObsModal()">
-        <div class="modal-content">
+    <!-- Interactive Live Widget Customizer Modal -->
+    <div class="modal-backdrop" id="obsCustomizerModal" onclick="if(event.target===this) closeObsCustomizerModal()">
+        <div class="modal-content-wide">
             <div class="modal-header">
-                <h2 id="modalTitle">📺 OBS BROWSER SOURCE LINKI</h2>
-                <button class="modal-close" onclick="closeObsModal()">&times;</button>
+                <h2 id="modalCustomizerTitle">🎛️ CANLI OBS WIDGET ÖZELLEŞTİRİCİ</h2>
+                <button class="modal-close" onclick="closeObsCustomizerModal()">&times;</button>
             </div>
 
-            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 14px;" id="modalDesc">
-                OBS Studio'da <b>Kaynaklar (Sources) -> Ekle (+) -> Tarayıcı (Browser)</b> seçin ve aşağıdaki URL'yi yapıştırın.
-            </p>
+            <div class="customizer-layout">
+                <!-- Controls Column -->
+                <div class="customizer-controls">
+                    <!-- Widget Mode -->
+                    <div class="control-group">
+                        <label class="control-label" id="lblCustMode">Görünüm Modu</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn active" data-cust="mode" data-val="grid" onclick="setCustOption('mode', 'grid', this)">🃏 NxM Grid</button>
+                            <button class="ctrl-btn" data-cust="mode" data-val="ticker" onclick="setCustOption('mode', 'ticker', this)">🎞️ Kayan Ticker</button>
+                            <button class="ctrl-btn" data-cust="mode" data-val="banner" onclick="setCustOption('mode', 'banner', this)">📊 Banner / HUD</button>
+                        </div>
+                    </div>
 
-            <div class="obs-options-grid">
-                <div class="obs-mode-btn" id="modeBtnBanner" onclick="setObsMode('banner', this)">
-                    📊 Banner / İlerleme Çubuğu
-                </div>
-                <div class="obs-mode-btn" id="modeBtnTicker" onclick="setObsMode('ticker', this)">
-                    🎞️ Kayan Eksikler (Ticker)
-                </div>
-                <div class="obs-mode-btn active" id="modeBtnGrid" onclick="setObsMode('grid', this)">
-                    🃏 3x3 Glitch Grid
-                </div>
-            </div>
+                    <!-- Theme Option -->
+                    <div class="control-group">
+                        <label class="control-label" id="lblCustTheme">Widget Teması</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn active" data-cust="theme" data-val="glitch" onclick="setCustOption('theme', 'glitch', this)">👾 Glitch</button>
+                            <button class="ctrl-btn" data-cust="theme" data-val="classic" onclick="setCustOption('theme', 'classic', this)">⚡ Classic</button>
+                            <button class="ctrl-btn" data-cust="theme" data-val="gold" onclick="setCustOption('theme', 'gold', this)">👑 Gold</button>
+                            <button class="ctrl-btn" data-cust="theme" data-val="stealth" onclick="setCustOption('theme', 'stealth', this)">🌑 Stealth</button>
+                        </div>
+                    </div>
 
-            <div class="obs-link-box">
-                <input type="text" class="obs-link-input" id="obsUrlInput" readonly value="http://127.0.0.1:8765/obs?mode=grid&season=42&lang=tr">
-                <button class="btn btn-primary" onclick="copyObsUrl()" id="copyBtnText">KOPYALA</button>
-            </div>
+                    <!-- Grid Columns & Rows (For Grid Mode) -->
+                    <div class="control-group" id="grpGridDimensions">
+                        <label class="control-label" id="lblCustLayout">Izgara Boyutu (Sütun x Satır)</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn" data-cust="layout" data-val="2x2" onclick="setCustLayout('2', '2', this)">2x2 (4 Kart)</button>
+                            <button class="ctrl-btn active" data-cust="layout" data-val="3x3" onclick="setCustLayout('3', '3', this)">3x3 (9 Kart)</button>
+                            <button class="ctrl-btn" data-cust="layout" data-val="4x2" onclick="setCustLayout('4', '2', this)">4x2 (8 Kart)</button>
+                            <button class="ctrl-btn" data-cust="layout" data-val="4x3" onclick="setCustLayout('4', '3', this)">4x3 (12 Kart)</button>
+                            <button class="ctrl-btn" data-cust="layout" data-val="4x1" onclick="setCustLayout('4', '1', this)">4x1 (Yatay)</button>
+                        </div>
+                    </div>
 
-            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-top: 10px;" id="modalTip">
-                💡 <b>İpucu:</b> Bu yönetim panelinde herhangi bir kutuyu (Owned / Mastered) işaretlediğinizde OBS'deki widget <b>anında ve gecikmesiz</b> güncellenir!
+                    <!-- Background Style -->
+                    <div class="control-group">
+                        <label class="control-label" id="lblCustBg">Arka Plan Tarzı</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn active" data-cust="bg" data-val="solid" onclick="setCustOption('bg', 'solid', this)">🌌 Koyu Zemin</button>
+                            <button class="ctrl-btn" data-cust="bg" data-val="glass" onclick="setCustOption('bg', 'glass', this)">🧊 Yarı Saydam (Glass)</button>
+                            <button class="ctrl-btn" data-cust="bg" data-val="transparent" onclick="setCustOption('bg', 'transparent', this)">👻 Tam Şeffaf</button>
+                        </div>
+                    </div>
+
+                    <!-- Rotation Interval -->
+                    <div class="control-group" id="grpInterval">
+                        <label class="control-label" id="lblCustInterval">Sayfa Geçiş Hızı</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn" data-cust="interval" data-val="4000" onclick="setCustOption('interval', '4000', this)">4 sn</button>
+                            <button class="ctrl-btn active" data-cust="interval" data-val="7000" onclick="setCustOption('interval', '7000', this)">7 sn</button>
+                            <button class="ctrl-btn" data-cust="interval" data-val="10000" onclick="setCustOption('interval', '10000', this)">10 sn</button>
+                        </div>
+                    </div>
+
+                    <!-- Scale Size -->
+                    <div class="control-group">
+                        <label class="control-label" id="lblCustScale">Karakter & Kart Ölçeği</label>
+                        <div class="control-pills">
+                            <button class="ctrl-btn" data-cust="scale" data-val="sm" onclick="setCustOption('scale', 'sm', this)">Kompakt</button>
+                            <button class="ctrl-btn active" data-cust="scale" data-val="md" onclick="setCustOption('scale', 'md', this)">Standart</button>
+                            <button class="ctrl-btn" data-cust="scale" data-val="lg" onclick="setCustOption('scale', 'lg', this)">Büyük Model</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Preview Column -->
+                <div class="customizer-preview-box">
+                    <span class="preview-badge" id="lblLivePreviewBadge">🔴 CANLI ÖNİZLEME (LIVE PREVIEW)</span>
+                    <div class="preview-iframe-wrapper">
+                        <iframe id="widgetPreviewIframe" class="preview-iframe" src="/obs?mode=grid&season=42&lang=tr"></iframe>
+                    </div>
+
+                    <div class="obs-link-box" style="width: 100%;">
+                        <input type="text" class="obs-link-input" id="customObsUrlInput" readonly value="http://127.0.0.1:8765/obs?mode=grid&season=42&lang=tr">
+                        <button class="btn btn-primary" onclick="copyCustomObsUrl()" id="btnCopyCustomUrl">KOPYALA</button>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 4px;" id="lblCustTip">
+                        💡 OBS Studio'da <b>Tarayıcı (Browser Source)</b> kaynağına yukarıdaki linki yapıştırın.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
