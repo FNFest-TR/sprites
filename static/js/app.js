@@ -1,4 +1,4 @@
-// Fortnite Sprites Manager Logic v2.1 with Cassette Widget & Unreleased Widget Control
+// Fortnite Sprites Manager Logic v2.2 with Full Bilingual TR/EN Localization
 let spritesData = [];
 let userState = {
     owned: new Set(),
@@ -27,7 +27,7 @@ let custState = {
     unreleased: "1" // "1" = show, "0" = hide
 };
 
-// Language Dictionary (Turkish & English)
+// Comprehensive Language Dictionary (Turkish & English)
 const I18N = {
     tr: {
         appTitle: "OVERRIDE TRACKER",
@@ -37,6 +37,7 @@ const I18N = {
         btnBackup: "💾 YEDEKLE",
         btnImport: "📥 İÇE AKTAR",
         btnReset: "🗑️ SIFIRLA",
+        txtBtnResetFilters: "🔄 SIFIRLA",
         
         // Stats
         statTotal: "TOPLAM SPRITE",
@@ -76,14 +77,38 @@ const I18N = {
         // Customizer Modal
         modalCustomizerTitle: "🎛️ CANLI OBS WIDGET ÖZELLEŞTİRİCİ",
         lblCustMode: "Görünüm Modu",
+        btnCustModeGrid: "🃏 NxM Grid",
+        btnCustModeCassette: "📼 Kaset / Disk",
+        btnCustModeTicker: "🎞️ Kayan Ticker",
+        btnCustModeBanner: "📊 Banner / HUD",
+        
         lblCustUnreleased: "Unreleased (Yayınlanmamış) Sprite'lar",
         btnCustUnrelShow: "✅ Göster",
         btnCustUnrelHide: "❌ Gizle (Sadece Çıkanlar)",
+        
         lblCustTheme: "Widget Teması",
         lblCustLayout: "Izgara Boyutu (Sütun x Satır)",
+        btnCustLayout2x2: "2x2 (4 Kart)",
+        btnCustLayout3x3: "3x3 (9 Kart)",
+        btnCustLayout4x2: "4x2 (8 Kart)",
+        btnCustLayout4x3: "4x3 (12 Kart)",
+        btnCustLayout4x1: "4x1 (Yatay)",
+        
         lblCustBg: "Arka Plan Tarzı",
+        btnCustBgSolid: "🌌 Koyu Zemin",
+        btnCustBgGlass: "🧊 Yarı Saydam (Glass)",
+        btnCustBgTransparent: "👻 Tam Şeffaf",
+        
         lblCustInterval: "Sayfa Geçiş Hızı",
+        btnCustInterval4s: "4 sn",
+        btnCustInterval7s: "7 sn",
+        btnCustInterval10s: "10 sn",
+        
         lblCustScale: "Karakter & Kart Ölçeği",
+        btnCustScaleSm: "Kompakt",
+        btnCustScaleMd: "Standart",
+        btnCustScaleLg: "Büyük Model",
+        
         lblLivePreviewBadge: "🔴 CANLI ÖNİZLEME (LIVE PREVIEW)",
         btnCopyCustomUrl: "KOPYALA",
         lblCustTip: "💡 OBS Studio'da <b>Tarayıcı (Browser Source)</b> kaynağına yukarıdaki linki yapıştırın.",
@@ -95,7 +120,7 @@ const I18N = {
         noMatchTitle: "Eşleşen sprite bulunamadı",
         noMatchSubtitle: "Filtrelerinizi veya arama kelimenizi kontrol edin.",
         
-        // Toasts
+        // Toasts & Dialogs
         toastCopied: "📋 OBS Browser Source linki kopyalandı!",
         toastMarked: "sprite 'Owned' olarak işaretlendi.",
         toastReset: "Tüm işaretlemeler sıfırlandı.",
@@ -104,7 +129,14 @@ const I18N = {
         toastBackupLoaded: "Yedek başarıyla yüklendi!",
         toastInvalidJson: "Geçersiz JSON dosyası!",
         toastRefreshing: "Fortnite.GG'den yeni sprite verileri çekiliyor...",
-        toastRefreshed: "Fortnite.GG verileri başarıyla güncellendi!"
+        toastRefreshed: "Fortnite.GG verileri başarıyla güncellendi!",
+        toastFiltersReset: "Filtreler sıfırlandı.",
+        
+        // Update Banner
+        txtUpdateTitle: "🚀 YENİ GÜNCELLEME MEVCUT! (v{LATEST})",
+        txtUpdateDesc: "Şu an v{CURRENT} sürümünü kullanıyorsunuz. En son özellikleri ve düzeltmeleri almak için yeni sürümü indirin.",
+        txtBtnUpdateDownload: "📥 YENİ SÜRÜMÜ İNDİR (GITHUB)",
+        btnDismissUpdate: "✕ KAPAT"
     },
     en: {
         appTitle: "OVERRIDE TRACKER",
@@ -114,6 +146,7 @@ const I18N = {
         btnBackup: "💾 BACKUP",
         btnImport: "📥 IMPORT",
         btnReset: "🗑️ RESET ALL",
+        txtBtnResetFilters: "🔄 RESET",
         
         // Stats
         statTotal: "TOTAL SPRITES",
@@ -153,14 +186,38 @@ const I18N = {
         // Customizer Modal
         modalCustomizerTitle: "🎛️ LIVE OBS WIDGET CUSTOMIZER",
         lblCustMode: "Widget Display Mode",
+        btnCustModeGrid: "🃏 NxM Grid",
+        btnCustModeCassette: "📼 Cassette / Disk",
+        btnCustModeTicker: "🎞️ Marquee Ticker",
+        btnCustModeBanner: "📊 Banner / HUD",
+        
         lblCustUnreleased: "Unreleased Sprites",
         btnCustUnrelShow: "✅ Show All",
         btnCustUnrelHide: "❌ Hide Unreleased",
+        
         lblCustTheme: "Widget Visual Theme",
         lblCustLayout: "Grid Size (Cols x Rows)",
+        btnCustLayout2x2: "2x2 (4 Cards)",
+        btnCustLayout3x3: "3x3 (9 Cards)",
+        btnCustLayout4x2: "4x2 (8 Cards)",
+        btnCustLayout4x3: "4x3 (12 Cards)",
+        btnCustLayout4x1: "4x1 (Horizontal)",
+        
         lblCustBg: "Background Style",
+        btnCustBgSolid: "🌌 Solid Dark",
+        btnCustBgGlass: "🧊 Semi-Glass",
+        btnCustBgTransparent: "👻 Transparent",
+        
         lblCustInterval: "Cycle Speed",
+        btnCustInterval4s: "4 sec",
+        btnCustInterval7s: "7 sec",
+        btnCustInterval10s: "10 sec",
+        
         lblCustScale: "Model & Card Scale",
+        btnCustScaleSm: "Compact",
+        btnCustScaleMd: "Standard",
+        btnCustScaleLg: "Large Model",
+        
         lblLivePreviewBadge: "🔴 LIVE PREVIEW",
         btnCopyCustomUrl: "COPY URL",
         lblCustTip: "💡 In OBS Studio, add a <b>Browser Source</b> and paste the URL above.",
@@ -172,7 +229,7 @@ const I18N = {
         noMatchTitle: "No matching sprites found",
         noMatchSubtitle: "Try adjusting your filters or search keywords.",
         
-        // Toasts
+        // Toasts & Dialogs
         toastCopied: "📋 OBS Browser Source link copied!",
         toastMarked: "sprites marked as 'Owned'.",
         toastReset: "All sprite progress has been reset.",
@@ -181,7 +238,14 @@ const I18N = {
         toastBackupLoaded: "Backup progress loaded successfully!",
         toastInvalidJson: "Invalid JSON backup file!",
         toastRefreshing: "Fetching latest sprite data from Fortnite.GG...",
-        toastRefreshed: "Fortnite.GG sprites data updated successfully!"
+        toastRefreshed: "Fortnite.GG sprites data updated successfully!",
+        toastFiltersReset: "Filters reset.",
+        
+        // Update Banner
+        txtUpdateTitle: "🚀 NEW UPDATE AVAILABLE! (v{LATEST})",
+        txtUpdateDesc: "You are currently running v{CURRENT}. Download the latest release to get new features and fixes.",
+        txtBtnUpdateDownload: "📥 DOWNLOAD LATEST RELEASE (GITHUB)",
+        btnDismissUpdate: "✕ DISMISS"
     }
 };
 
@@ -192,6 +256,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     applyLanguage(currentLang);
     setupEventListeners();
     await loadInitialData();
+    checkAppVersion();
 });
 
 // Theme Logic
@@ -238,6 +303,7 @@ function applyLanguage(lang) {
     setTxt("txtBtnBackup", t.btnBackup);
     setTxt("txtBtnImport", t.btnImport);
     setTxt("txtBtnReset", t.btnReset);
+    setTxt("txtBtnResetFilters", t.txtBtnResetFilters);
 
     setTxt("txtStatTotal", t.statTotal);
     setTxt("txtStatOwned", t.statOwned);
@@ -276,18 +342,48 @@ function applyLanguage(lang) {
     // Customizer strings
     setTxt("modalCustomizerTitle", t.modalCustomizerTitle);
     setTxt("lblCustMode", t.lblCustMode);
+    setTxt("btnCustModeGrid", t.btnCustModeGrid);
+    setTxt("btnCustModeCassette", t.btnCustModeCassette);
+    setTxt("btnCustModeTicker", t.btnCustModeTicker);
+    setTxt("btnCustModeBanner", t.btnCustModeBanner);
+
     setTxt("lblCustUnreleased", t.lblCustUnreleased);
     setTxt("btnCustUnrelShow", t.btnCustUnrelShow);
     setTxt("btnCustUnrelHide", t.btnCustUnrelHide);
+
     setTxt("lblCustTheme", t.lblCustTheme);
     setTxt("lblCustLayout", t.lblCustLayout);
+    setTxt("btnCustLayout2x2", t.btnCustLayout2x2);
+    setTxt("btnCustLayout3x3", t.btnCustLayout3x3);
+    setTxt("btnCustLayout4x2", t.btnCustLayout4x2);
+    setTxt("btnCustLayout4x3", t.btnCustLayout4x3);
+    setTxt("btnCustLayout4x1", t.btnCustLayout4x1);
+
     setTxt("lblCustBg", t.lblCustBg);
+    setTxt("btnCustBgSolid", t.btnCustBgSolid);
+    setTxt("btnCustBgGlass", t.btnCustBgGlass);
+    setTxt("btnCustBgTransparent", t.btnCustBgTransparent);
+
     setTxt("lblCustInterval", t.lblCustInterval);
+    setTxt("btnCustInterval4s", t.btnCustInterval4s);
+    setTxt("btnCustInterval7s", t.btnCustInterval7s);
+    setTxt("btnCustInterval10s", t.btnCustInterval10s);
+
     setTxt("lblCustScale", t.lblCustScale);
+    setTxt("btnCustScaleSm", t.btnCustScaleSm);
+    setTxt("btnCustScaleMd", t.btnCustScaleMd);
+    setTxt("btnCustScaleLg", t.btnCustScaleLg);
+
     setTxt("lblLivePreviewBadge", t.lblLivePreviewBadge);
     setTxt("btnCopyCustomUrl", t.btnCopyCustomUrl);
     setTxt("lblCustTip", t.lblCustTip);
 
+    // Update Banner Translations if active
+    if (cachedVersionData && cachedVersionData.update_available) {
+        renderUpdateBanner(cachedVersionData);
+    }
+
+    populateFilterDropdowns();
     renderStats();
     renderSprites();
 }
@@ -337,13 +433,17 @@ function populateFilterDropdowns() {
     const t = I18N[currentLang] || I18N.tr;
 
     if (parentSelect) {
+        const prevVal = parentSelect.value || "all";
         parentSelect.innerHTML = `<option value="all">${t.optParentAll}</option>` + 
             Array.from(parents).sort().map(p => `<option value="${p}">${p}</option>`).join("");
+        parentSelect.value = prevVal;
     }
 
     if (variantSelect) {
+        const prevVal = variantSelect.value || "all";
         variantSelect.innerHTML = `<option value="all">${t.optVariantAll}</option>` + 
             Array.from(variants).sort().map(v => `<option value="${v}">${v.toUpperCase()}</option>`).join("");
+        variantSelect.value = prevVal;
     }
 }
 
@@ -418,7 +518,7 @@ function resetAllFilters() {
 
     highlightRarityCapsule("all");
     renderSprites();
-    showToast("Filtreler sıfırlandı.");
+    showToast(I18N[currentLang].toastFiltersReset);
 }
 
 function filterByRarityCapsule(rarity) {
@@ -726,7 +826,7 @@ function exportProgressJSON() {
         owned: Array.from(userState.owned),
         mastered: Array.from(userState.mastered),
         exported_at: new Date().toISOString(),
-        version: "2.1"
+        version: "2.2"
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -870,12 +970,27 @@ function buildCustomObsUrl(relative = false) {
 function updateCustomizerPreview() {
     const iframe = document.getElementById("widgetPreviewIframe");
     const input = document.getElementById("customObsUrlInput");
+    const wrapper = document.querySelector(".preview-iframe-wrapper");
 
     const fullUrl = buildCustomObsUrl(false);
     const relUrl = buildCustomObsUrl(true);
 
     if (iframe) iframe.src = relUrl;
     if (input) input.value = fullUrl;
+
+    if (wrapper) {
+        if (custState.mode === "banner") {
+            wrapper.style.height = "160px";
+        } else if (custState.mode === "ticker") {
+            wrapper.style.height = "230px";
+        } else if (custState.mode === "cassette" || custState.mode === "disk") {
+            wrapper.style.height = "380px";
+        } else {
+            // Grid mode
+            const r = parseInt(custState.rows) || 3;
+            wrapper.style.height = r === 1 ? "200px" : (r === 2 ? "320px" : "420px");
+        }
+    }
 }
 
 function copyCustomObsUrl() {
@@ -898,4 +1013,71 @@ function showToast(msg) {
     toast.textContent = msg;
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 3200);
+}
+
+// ========================================================
+// VERSION CHECK SYSTEM
+// ========================================================
+let cachedVersionData = null;
+
+async function checkAppVersion() {
+    try {
+        const resp = await fetch("/api/version");
+        if (!resp.ok) return;
+        const data = await resp.json();
+        cachedVersionData = data;
+
+        const badge = document.getElementById("appVersionBadge");
+        if (badge) {
+            badge.textContent = `v${data.current_version}`;
+        }
+
+        if (data.update_available) {
+            if (badge) badge.classList.add("has-update");
+
+            const dismissed = sessionStorage.getItem("dismissed_update");
+            if (dismissed !== data.latest_version) {
+                renderUpdateBanner(data);
+            }
+        }
+    } catch (e) {
+        console.warn("Version check failed:", e);
+    }
+}
+
+function renderUpdateBanner(data) {
+    const banner = document.getElementById("updateAlertBanner");
+    const t = I18N[currentLang] || I18N.tr;
+
+    if (!banner || !data) return;
+
+    const titleEl = document.getElementById("txtUpdateTitle");
+    const descEl = document.getElementById("txtUpdateDesc");
+    const btnDown = document.getElementById("btnUpdateDownload");
+    const btnDismiss = document.getElementById("btnDismissUpdate");
+
+    if (titleEl) {
+        titleEl.textContent = t.txtUpdateTitle.replace("{LATEST}", data.latest_version);
+    }
+    if (descEl) {
+        descEl.textContent = t.txtUpdateDesc.replace("{CURRENT}", data.current_version).replace("{LATEST}", data.latest_version);
+    }
+    if (btnDown) {
+        btnDown.href = data.release_url || "https://github.com/FNFest-TR/sprites/releases/latest";
+        const btnTxt = document.getElementById("txtBtnUpdateDownload");
+        if (btnTxt) btnTxt.textContent = t.txtBtnUpdateDownload;
+    }
+    if (btnDismiss) {
+        btnDismiss.textContent = t.btnDismissUpdate;
+    }
+
+    banner.classList.add("show");
+}
+
+function dismissUpdateBanner() {
+    const banner = document.getElementById("updateAlertBanner");
+    if (banner) banner.classList.remove("show");
+    if (cachedVersionData && cachedVersionData.latest_version) {
+        sessionStorage.setItem("dismissed_update", cachedVersionData.latest_version);
+    }
 }

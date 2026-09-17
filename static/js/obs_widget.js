@@ -1,4 +1,4 @@
-// OBS Widget Controller v2.0 with Dynamic NxM Grid, Themes, Cassette Mode & Unreleased Toggle
+// OBS Widget Controller v2.2 with Dynamic NxM Grid, Themes, Cassette Sliding Grid Mode & Unreleased Toggle
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get("mode") || "grid"; // grid | ticker | banner | cassette | disk
 const season = urlParams.get("season") || "42"; // '42' (C7 S4) by default, or 'all', '41'
@@ -20,7 +20,6 @@ let userState = {
 
 let currentGridPage = 0;
 let cycleTimer = null;
-let cassetteSpawnTimer = null;
 
 const OBS_I18N = {
     tr: {
@@ -31,7 +30,7 @@ const OBS_I18N = {
         allDoneHeader: "🎉 TEBRİKLER!",
         allDoneSub: "Tüm Sprite'lar toplandı!",
         cassetteTitle: "SPRITES OVERRIDE",
-        cassetteMissingLabel: "KALAN EKSİK"
+        cassetteMissingLabel: "EKSİKLER"
     },
     en: {
         trackerTitle: "Sprites Tracker",
@@ -41,7 +40,7 @@ const OBS_I18N = {
         allDoneHeader: "🎉 CONGRATULATIONS!",
         allDoneSub: "All Sprites Collected!",
         cassetteTitle: "SPRITES OVERRIDE",
-        cassetteMissingLabel: "REMAINING MISSING"
+        cassetteMissingLabel: "MISSING"
     }
 };
 
@@ -50,7 +49,8 @@ const syncChannel = new BroadcastChannel("fortnite_sprites_sync");
 
 document.addEventListener("DOMContentLoaded", async () => {
     document.documentElement.setAttribute("data-theme", theme);
-    document.body.className = `theme-${theme} scale-${scale}`;
+    document.body.className = `theme-${theme} scale-${scale} mode-${mode}`;
+    document.body.setAttribute("data-mode", mode);
 
     await loadInitialData();
     renderWidget();
@@ -106,7 +106,6 @@ function getActiveSprites() {
     if (season !== "all") {
         list = list.filter(s => s.season === season);
     }
-    // Filter unreleased if unreleased=0
     if (!showUnreleased) {
         list = list.filter(s => !s.unreleased);
     }
@@ -314,10 +313,59 @@ function renderDynamicGrid(root, activeSprites, missingSprites) {
     }
 }
 
-// 4. CASSETTE / DISK WIDGET MODE
+// 4. CASSETTE / DISK WIDGET MODE (Sliding Grid Track)
 function renderCassette(root, ownedCount, masteredCount, missingCount, total, missingSprites, activeSprites) {
     if (cycleTimer) clearInterval(cycleTimer);
-    if (cassetteSpawnTimer) clearInterval(cassetteSpawnTimer);
+
+    let list = missingSprites;
+    if (filterType === "all") {
+        list = activeSprites;
+    } else if (filterType === "owned") {
+        list = activeSprites.filter(s => userState.owned.has(s.id));
+    }
+
+    if (list.length === 0) {
+        root.innerHTML = `
+            <div class="kaset-widget">
+                <img class="kaset-bg-image" src="/static/img/kaset.png" alt="Cassette Frame">
+                <div class="kaset-bar-mask"></div>
+                <div class="kaset-screen">
+                    <div class="kaset-scanlines"></div>
+                    <div class="kaset-screen-header">
+                        <span class="kaset-screen-title">${t.cassetteTitle}</span>
+                        <span class="kaset-screen-counter">${ownedCount}/${total}</span>
+                    </div>
+                    <div style="flex:1; display:flex; align-items:center; justify-content:center; text-align:center; padding:10px; z-index:5;">
+                        <div style="font-family:'Orbitron', sans-serif; font-weight:900; color:#00ff88; font-size:13px; text-shadow:0 0 10px #00ff88;">
+                            ${t.allDoneHeader}<br><span style="font-size:10px; color:#fff;">${t.allDoneSub}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    // Duplicate list to create seamless infinite scrolling conveyor
+    const displayList = [...list, ...list];
+    const duration = Math.max(12, list.length * 3.2);
+
+    const cardsHtml = displayList.map(s => {
+        const isOwned = userState.owned.has(s.id);
+        const isMastered = userState.mastered.has(s.id);
+
+        return `
+            <div class="kaset-item-card ${isOwned ? 'is-owned' : ''} ${isMastered ? 'is-mastered' : ''}">
+                <div class="kaset-item-img-box">
+                    <img class="kaset-item-img" src="/static/${s.image_local}" onerror="this.src='${s.image_url}'" alt="${s.name}">
+                </div>
+                <div class="kaset-item-meta">
+                    <div class="kaset-item-name" title="${s.name}">${s.name}</div>
+                    <span class="kaset-item-badge pill-${s.rarity}">${s.rarity}</span>
+                </div>
+            </div>
+        `;
+    }).join("");
 
     root.innerHTML = `
         <div class="kaset-widget">
@@ -325,60 +373,16 @@ function renderCassette(root, ownedCount, masteredCount, missingCount, total, mi
             <div class="kaset-bar-mask"></div>
             <div class="kaset-screen">
                 <div class="kaset-scanlines"></div>
-                <div class="kaset-top-glitch">${t.cassetteTitle}</div>
-                <div id="kasetParticles"></div>
-                <div class="kaset-center-hud">
-                    <div class="kaset-counter-text" id="kasetMissingCount">${missingCount}</div>
-                    <div class="kaset-counter-label">${t.cassetteMissingLabel} (${ownedCount}/${total})</div>
+                <div class="kaset-screen-header">
+                    <span class="kaset-screen-title">${t.cassetteTitle}</span>
+                    <span class="kaset-screen-counter">❌ ${missingCount} ${t.cassetteMissingLabel} (${ownedCount}/${total})</span>
+                </div>
+                <div class="kaset-grid-viewport">
+                    <div class="kaset-grid-track" style="animation-duration: ${duration}s;">
+                        ${cardsHtml}
+                    </div>
                 </div>
             </div>
         </div>
     `;
-
-    // Floating sprite glide logic
-    const pContainer = document.getElementById("kasetParticles");
-    const spritePool = missingSprites.length > 0 ? missingSprites : activeSprites;
-
-    if (!pContainer || spritePool.length === 0) return;
-
-    function spawnFloatingSprite() {
-        if (!document.getElementById("kasetParticles")) return;
-        const randomSprite = spritePool[Math.floor(Math.random() * spritePool.length)];
-        const img = document.createElement("img");
-        img.src = `/static/${randomSprite.image_local}`;
-        img.onerror = () => { img.src = randomSprite.image_url; };
-        img.className = "floating-kaset-sprite";
-
-        // Random starting position on the left/bottom
-        const startX = -15 + Math.random() * 20; // -15% to 5%
-        const startY = 15 + Math.random() * 55; // 15% to 70%
-        img.style.left = startX + "%";
-        img.style.top = startY + "%";
-        img.style.opacity = "0";
-        img.style.transition = "opacity 1.5s ease-in-out, left 12s linear, top 12s ease-in-out";
-
-        pContainer.appendChild(img);
-
-        // Glide across the screen to the right
-        setTimeout(() => {
-            img.style.opacity = "0.85";
-            const endX = 85 + Math.random() * 25; // glide across to right
-            const endY = 15 + Math.random() * 55;
-            img.style.left = endX + "%";
-            img.style.top = endY + "%";
-        }, 100);
-
-        // Fade out and remove
-        setTimeout(() => {
-            img.style.opacity = "0";
-            setTimeout(() => { img.remove(); }, 1800);
-        }, 10500);
-    }
-
-    // Spawn 3-4 initial sprites with staggered intervals
-    for (let i = 0; i < 4; i++) {
-        setTimeout(spawnFloatingSprite, i * 2200);
-    }
-
-    cassetteSpawnTimer = setInterval(spawnFloatingSprite, 3000);
 }

@@ -72,6 +72,38 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body.mode-banner {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 12px !important;
+}
+
+body.mode-banner #widgetRoot {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+body.mode-grid {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+}
+
+body.mode-ticker {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+body.mode-cassette, body.mode-disk {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
 }
 
 /* Background Types */
@@ -91,10 +123,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    min-width: 380px;
-    max-width: 490px;
+    width: 480px;
+    max-width: calc(100vw - 24px);
+    height: auto !important;
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .banner-header {
@@ -315,9 +349,14 @@ body {
 .obs-grid-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    max-width: 98vw;
+    max-height: 98vh;
+    margin: auto;
+    flex-shrink: 0;
 }
 
 .obs-dyn-grid {
@@ -326,21 +365,22 @@ body {
     gap: 10px;
     background: var(--bg-widget-solid);
     border: var(--widget-border);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 12px;
     box-shadow: var(--box-shadow);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
 }
 
-/* Dynamic Grid Column Formats */
-.grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
-.grid-cols-3 { grid-template-columns: repeat(3, 1fr) !important; }
-.grid-cols-4 { grid-template-columns: repeat(4, 1fr) !important; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, auto)) !important; }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, auto)) !important; }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, auto)) !important; }
 
-/* Dynamic Grid Row Formats */
-.grid-rows-1 { grid-template-rows: repeat(1, 1fr) !important; }
-.grid-rows-2 { grid-template-rows: repeat(2, 1fr) !important; }
-.grid-rows-3 { grid-template-rows: repeat(3, 1fr) !important; }
+.grid-rows-1 { grid-template-rows: repeat(1, minmax(0, auto)) !important; }
+.grid-rows-2 { grid-template-rows: repeat(2, minmax(0, auto)) !important; }
+.grid-rows-3 { grid-template-rows: repeat(3, minmax(0, auto)) !important; }
 
 .obs-dyn-grid.fade-out {
     opacity: 0;
@@ -352,7 +392,6 @@ body {
     transform: scale(1);
 }
 
-/* Character Card */
 .obs-dyn-card {
     background: var(--bg-card);
     border: var(--card-border);
@@ -361,12 +400,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 6px 8px;
-    height: 145px;
+    padding: 8px 6px;
+    width: 135px;
+    height: 135px;
+    aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
     transition: all 0.25s ease;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .obs-dyn-card.is-owned {
@@ -379,31 +422,29 @@ body {
   box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
 }
 
+.scale-sm .obs-dyn-card { width: 105px; height: 105px; padding: 5px 4px; }
+.scale-lg .obs-dyn-card { width: 165px; height: 165px; padding: 10px 8px; }
+
 .obs-dyn-img-wrap {
     width: 100%;
-    height: 94px;
+    flex: 1;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 2px;
 }
 
 .obs-dyn-img {
-    width: 90px;
-    height: 90px;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.9));
     transition: transform 0.2s ease;
 }
-
-/* Card Scaling Options */
-.scale-sm .obs-dyn-card { height: 110px; padding: 4px; }
-.scale-sm .obs-dyn-img { width: 68px; height: 68px; }
-.scale-sm .obs-dyn-img-wrap { height: 72px; }
-
-.scale-lg .obs-dyn-card { height: 175px; padding: 8px; }
-.scale-lg .obs-dyn-img { width: 115px; height: 115px; }
-.scale-lg .obs-dyn-img-wrap { height: 118px; }
 
 .obs-dyn-meta {
     width: 100%;
@@ -436,7 +477,6 @@ body {
     letter-spacing: 0.4px;
 }
 
-/* Pagination Dots */
 .obs-dyn-pagination {
     display: flex;
     align-items: center;
@@ -461,7 +501,6 @@ body {
     box-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* Rarity Badge Colors */
 .pill-mythic { background: #ffe600; color: #050114; }
 .pill-legendary { background: #ff8500; color: #fff; }
 .pill-epic { background: #b5179e; color: #fff; }
@@ -471,30 +510,56 @@ body {
 .pill-common { background: #7f8c8d; color: #fff; }
 
 /* ========================================================
-   MODE 4: CASSETTE / DISK WIDGET (KASET WIDGET)
+   MODE 4: CASSETTE / DISK WIDGET (PIXEL-PERFECT ALIGNMENT)
    ======================================================== */
+body.mode-cassette, body.mode-disk {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.mode-cassette #widgetRoot, body.mode-disk #widgetRoot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .kaset-widget {
     position: relative;
-    height: 95vh;
-    max-height: 800px;
-    display: inline-block;
+    width: min(94vw, calc(94vh * 1));
+    height: min(94vh, calc(94vw * 1));
+    max-width: 850px;
+    max-height: 850px;
+    aspect-ratio: 1 / 1;
+    display: block;
     user-select: none;
+    margin: auto;
+    flex-shrink: 0;
 }
 
 .kaset-widget img.kaset-bg-image {
+    width: 100%;
     height: 100%;
-    width: auto;
+    object-fit: contain;
     display: block;
     position: relative;
-    z-index: 10; /* Kaset çerçevesi EN ÖNDE durur */
+    z-index: 10;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+    pointer-events: none;
 }
 
 /* Kaset Renkli Işıldayan Barı */
 .kaset-bar-mask {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 11; /* Kasetin hemen üstünde */
+    z-index: 11;
     pointer-events: none;
     background: linear-gradient(135deg, var(--neon-accent), var(--neon-cyan));
     
@@ -516,62 +581,163 @@ body {
     100% { filter: drop-shadow(0 0 25px var(--neon-accent)) drop-shadow(0 0 15px var(--neon-cyan)); }
 }
 
-/* Ekran (Kasetin ARKASINDA) */
+/* Ekran Bölgesi (Kasetin Slotuna Tam Oturan) */
 .kaset-screen {
     position: absolute;
     top: 32.4%;
-    left: 25.2%;
-    width: 51.2%;
+    left: 24.8%;
+    width: 51.8%;
     height: 29.8%;
-    z-index: 1; /* Ekran kasetin ARKASINDA */
-    border-radius: 12px;
+    z-index: 1;
+    border-radius: 8px;
     background: url('/static/img/bg.png') center/cover no-repeat;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: inset 0 0 35px rgba(180, 0, 255, 0.5), inset 0 0 15px rgba(0, 240, 255, 0.4);
+    container-type: size;
+    padding: 2cqh 0 3cqh;
 }
 
-/* Kaset Üst Başlık Glitch */
-.kaset-top-glitch {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
+/* BÜYÜTÜLMÜŞ ÜST BİLGİ ÇUBUĞU */
+.kaset-screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1cqh 4cqw;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.55);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.45);
+    height: 22%;
+}
+
+.kaset-screen-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
+    font-size: clamp(8px, 9cqh, 16px);
     font-weight: 900;
-    color: #fff;
+    color: #ffffff;
     font-style: italic;
-    letter-spacing: 2px;
-    z-index: 6;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 0 var(--neon-accent), -2px 0 var(--neon-cyan);
     text-transform: uppercase;
-    text-shadow: 2px 0 8px var(--neon-accent), -2px 0 8px var(--neon-cyan);
     white-space: nowrap;
 }
 
-/* Uçan Büyücükler Konteyneri */
-#kasetParticles {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
+.kaset-screen-counter {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(9px, 10cqh, 17px);
+    font-weight: 900;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    white-space: nowrap;
+}
+
+/* Kaset İçinde Soldan Sağa Kayar Grid Bandı */
+.kaset-grid-viewport {
+    width: 100%;
+    flex: 1;
+    height: 75%;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
 }
 
-.floating-kaset-sprite {
-    position: absolute;
-    width: 60px;
-    height: 60px;
+.kaset-grid-track {
+    display: flex;
+    gap: 3cqw;
+    animation: kasetScrollLeftToRight 28s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+    padding: 0 3cqw;
+    height: 100%;
+    align-items: center;
+}
+
+@keyframes kasetScrollLeftToRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+/* BÜYÜTÜLMÜŞ ORANTILI SPRITE KARTI */
+.kaset-item-card {
+    height: 90%;
+    width: auto;
+    aspect-ratio: 4 / 5;
+    background: rgba(14, 7, 43, 0.9);
+    border: 1.5px solid rgba(0, 240, 255, 0.45);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2cqh 2cqw;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.85), inset 0 0 8px rgba(0, 240, 255, 0.2);
+}
+
+.kaset-item-card.is-owned {
+    border-color: var(--neon-green) !important;
+    box-shadow: 0 0 14px rgba(0, 255, 136, 0.55);
+}
+
+.kaset-item-card.is-mastered {
+    border-color: var(--neon-cyan) !important;
+    box-shadow: 0 0 16px var(--neon-cyan);
+}
+
+/* DEVASA RESİM ALANI & MODEL */
+.kaset-item-img-box {
+    width: 100%;
+    height: 62%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.kaset-item-img {
+    height: 95%;
+    width: auto;
+    max-width: 95%;
     object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8)) drop-shadow(0 4px 10px rgba(0,0,0,0.8));
-    animation: kaset-bob 5s infinite alternate ease-in-out;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.95));
 }
 
-@keyframes kaset-bob {
-    from { transform: translateY(-8px) scale(0.95); }
-    to { transform: translateY(8px) scale(1.05); }
+.kaset-item-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5cqh;
+}
+
+.kaset-item-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(7px, 8cqh, 13px);
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.kaset-item-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(5.5px, 6cqh, 9px);
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 1cqh 4cqw;
+    border-radius: 2px;
+    letter-spacing: 0.4px;
 }
 
 /* Kaset Tarama Çizgileri */
@@ -582,50 +748,10 @@ body {
         to bottom,
         transparent 0px,
         transparent 2px,
-        rgba(0, 0, 0, 0.35) 2px,
-        rgba(0, 0, 0, 0.35) 4px
+        rgba(0, 0, 0, 0.3) 2px,
+        rgba(0, 0, 0, 0.3) 4px
     );
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-/* Kaset Ortasındaki Sayaç */
-.kaset-center-hud {
-    position: absolute;
     z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
-}
-
-.kaset-counter-text {
-    font-family: 'Share Tech Mono', 'Orbitron', monospace;
-    font-size: 52px;
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 15px var(--neon-accent), 0 0 20px var(--neon-cyan);
-    line-height: 1;
-    font-style: italic;
-    animation: kaset-text-shake 0.35s infinite linear alternate-reverse;
-}
-
-@keyframes kaset-text-shake {
-    0% { transform: translate(1px, 0); }
-    100% { transform: translate(-1px, 0); }
-}
-
-.kaset-counter-label {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--neon-cyan);
-    letter-spacing: 3px;
-    text-shadow: 0 0 8px var(--neon-cyan);
-    margin-top: 4px;
-    text-transform: uppercase;
+    opacity: 0.55;
 }

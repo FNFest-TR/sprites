@@ -1,12 +1,16 @@
 import os
 import json
 import sys
+import requests
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import fetch_sprites
+
+CURRENT_VERSION = "2.2.0"
+GITHUB_REPO = "FNFest-TR/sprites"
 
 # Determine runtime directory (Handles both PyInstaller frozen mode and normal script mode)
 if getattr(sys, 'frozen', False):
@@ -96,6 +100,49 @@ async def save_state(request: Request):
         json.dump(state, f, indent=2, ensure_ascii=False)
     return {"status": "ok", "count_owned": len(owned), "count_mastered": len(mastered)}
 
+def parse_version_tuple(v_str):
+    clean = str(v_str).lower().lstrip("v").strip()
+    parts = []
+    for p in clean.split("."):
+        try:
+            parts.append(int(p))
+        except ValueError:
+            parts.append(0)
+    return tuple(parts)
+
+@app.get("/api/version")
+async def check_version():
+    latest_ver = CURRENT_VERSION
+    update_available = False
+    release_url = f"https://github.com/{GITHUB_REPO}/releases"
+    release_name = ""
+    release_body = ""
+    
+    try:
+        url = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
+        headers = {"User-Agent": "FortniteSpritesTracker"}
+        resp = requests.get(url, headers=headers, timeout=3.5)
+        if resp.status_code == 200:
+            data = resp.json()
+            latest_tag = data.get("tag_name", "").lstrip("v")
+            if latest_tag and parse_version_tuple(latest_tag) > parse_version_tuple(CURRENT_VERSION):
+                update_available = True
+                latest_ver = latest_tag
+                release_url = data.get("html_url", release_url)
+                release_name = data.get("name", f"v{latest_tag}")
+                release_body = data.get("body", "")
+    except Exception:
+        pass
+
+    return {
+        "current_version": CURRENT_VERSION,
+        "latest_version": latest_ver,
+        "update_available": update_available,
+        "release_url": release_url,
+        "release_name": release_name,
+        "release_body": release_body
+    }
+
 @app.post("/api/refresh")
 async def refresh_sprites():
     try:
@@ -112,5 +159,5 @@ async def refresh_sprites():
 PORT = int(os.environ.get("PORT", 8765))
 
 if __name__ == "__main__":
-    print(f"[*] Starting Fortnite Sprites Tracker Server on http://127.0.0.1:{PORT}")
+    print(f"[*] Starting Fortnite Sprites Tracker Server (v{CURRENT_VERSION}) on http://127.0.0.1:{PORT}")
     uvicorn.run(app, host="127.0.0.1", port=PORT, log_level="info")
