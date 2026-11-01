@@ -64,7 +64,7 @@ try:
         webbrowser.open(f"http://127.0.0.1:{PORT}")
 
     def open_obs_widget(icon=None, item=None):
-        webbrowser.open(f"http://127.0.0.1:{PORT}/obs?mode=grid&season=42&lang=tr")
+        webbrowser.open(f"http://127.0.0.1:{PORT}/obs?mode=grid&season=43&theme=onepiece&lang=tr")
 
     def exit_app(icon=None, item=None):
         log("Exiting application...")

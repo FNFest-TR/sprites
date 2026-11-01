@@ -1,4 +1,4 @@
-// Fortnite Sprites Manager Logic v2.2 with Full Bilingual TR/EN Localization
+// Fortnite Sprites Manager Logic v2.3 with One Piece & C7 MS Season Support
 let spritesData = [];
 let userState = {
     owned: new Set(),
@@ -6,8 +6,8 @@ let userState = {
 };
 
 let currentLang = localStorage.getItem("fn_sprites_lang") || "tr";
-let currentTheme = localStorage.getItem("fn_sprites_theme") || "glitch";
-let activeSeason = "42"; // C7 S4 by default
+let currentTheme = localStorage.getItem("fn_sprites_theme") || "onepiece";
+let activeSeason = "43"; // C7 MS (One Piece) by default
 let activeStatusTab = "all";
 let activeRarityFilter = "all";
 let activeParentFilter = "all";
@@ -18,7 +18,7 @@ let activeSortFilter = "id";
 // Live Widget Customizer State
 let custState = {
     mode: "grid",
-    theme: "glitch",
+    theme: "onepiece",
     cols: "3",
     rows: "3",
     bg: "solid",
@@ -32,6 +32,8 @@ const I18N = {
     tr: {
         appTitle: "OVERRIDE TRACKER",
         appSubtitle: "GLITCH SEZONU ■ SPRITES SİSTEMİ",
+        appTitleOnepiece: "HAZİNE AVCILARI",
+        appSubtitleOnepiece: "ONE PIECE ■ HAZİNE AVCILARI (C7 MS)",
         btnObs: "🎛️ CANLI WIDGET AYARLA",
         btnRefresh: "🔄 FORTNITE.GG GÜNCELLE",
         btnBackup: "💾 YEDEKLE",
@@ -49,6 +51,8 @@ const I18N = {
         seasonAll: "ALL SEASONS",
         seasonC7S3: "C7 S3",
         seasonC7S4: "C7 S4",
+        seasonC7MS: "C7 MS (ONE PIECE)",
+        seasonC7MS: "C7 MS (ONE PIECE)",
         
         // Search & Filter
         searchPlaceholder: "Sprite, varyant veya aile ara...",
@@ -141,6 +145,8 @@ const I18N = {
     en: {
         appTitle: "OVERRIDE TRACKER",
         appSubtitle: "GLITCH SEASON ■ SPRITES SYSTEM",
+        appTitleOnepiece: "TREASURE HUNTERS",
+        appSubtitleOnepiece: "ONE PIECE ■ TREASURE HUNTERS (C7 MS)",
         btnObs: "🎛️ LIVE WIDGET STYLER",
         btnRefresh: "🔄 REFRESH FORTNITE.GG",
         btnBackup: "💾 BACKUP",
@@ -158,6 +164,7 @@ const I18N = {
         seasonAll: "ALL SEASONS",
         seasonC7S3: "C7 S3",
         seasonC7S4: "C7 S4",
+        seasonC7MS: "C7 MS (ONE PIECE)",
         
         // Search & Filter
         searchPlaceholder: "Search sprite, variant, or family...",
@@ -273,6 +280,28 @@ function applyTheme(theme) {
     document.querySelectorAll(".theme-btn").forEach(btn => {
         btn.classList.toggle("active", btn.dataset.theme === theme);
     });
+
+    const brandIcon = document.getElementById("brandIcon");
+    const t = I18N[currentLang] || I18N.tr;
+    const titleEl = document.getElementById("txtAppTitle");
+    const subEl = document.getElementById("txtAppSubtitle");
+
+    if (theme === "onepiece") {
+        if (brandIcon) brandIcon.textContent = "🏴‍☠️";
+        if (titleEl) {
+            const titleTxt = t.appTitleOnepiece || "HAZİNE AVCILARI";
+            titleEl.textContent = titleTxt;
+            titleEl.setAttribute("data-text", titleTxt);
+        }
+        if (subEl) subEl.textContent = t.appSubtitleOnepiece || "ONE PIECE ■ HAZİNE AVCILARI (C7 MS)";
+    } else {
+        if (brandIcon) brandIcon.textContent = "⚡";
+        if (titleEl) {
+            titleEl.textContent = t.appTitle;
+            titleEl.setAttribute("data-text", t.appTitle);
+        }
+        if (subEl) subEl.textContent = t.appSubtitle;
+    }
 }
 
 // Language Logic
@@ -313,6 +342,7 @@ function applyLanguage(lang) {
     setTxt("btnSeasonAll", t.seasonAll);
     setTxt("btnSeasonC7S3", t.seasonC7S3);
     setTxt("btnSeasonC7S4", t.seasonC7S4);
+    setTxt("btnSeasonC7MS", t.seasonC7MS);
 
     const searchInp = document.getElementById("searchInput");
     if (searchInp) searchInp.placeholder = t.searchPlaceholder;
@@ -383,6 +413,7 @@ function applyLanguage(lang) {
         renderUpdateBanner(cachedVersionData);
     }
 
+    applyTheme(currentTheme);
     populateFilterDropdowns();
     renderStats();
     renderSprites();
@@ -425,7 +456,9 @@ function populateFilterDropdowns() {
     const parents = new Set();
     const variants = new Set();
 
-    spritesData.forEach(s => {
+    const pool = (activeSeason === "all") ? spritesData : spritesData.filter(s => s.season === activeSeason);
+
+    pool.forEach(s => {
         if (s.parent && s.parent.trim()) parents.add(s.parent.trim());
         if (s.variant && s.variant.trim() && s.variant !== "base") variants.add(s.variant.trim());
     });
@@ -436,14 +469,27 @@ function populateFilterDropdowns() {
         const prevVal = parentSelect.value || "all";
         parentSelect.innerHTML = `<option value="all">${t.optParentAll}</option>` + 
             Array.from(parents).sort().map(p => `<option value="${p}">${p}</option>`).join("");
-        parentSelect.value = prevVal;
+        if (parents.has(prevVal)) {
+            parentSelect.value = prevVal;
+        } else {
+            parentSelect.value = "all";
+            activeParentFilter = "all";
+        }
     }
 
     if (variantSelect) {
         const prevVal = variantSelect.value || "all";
         variantSelect.innerHTML = `<option value="all">${t.optVariantAll}</option>` + 
-            Array.from(variants).sort().map(v => `<option value="${v}">${v.toUpperCase()}</option>`).join("");
-        variantSelect.value = prevVal;
+            Array.from(variants).sort().map(v => {
+                const label = v === "jeweled" ? "FORTUNE (JEWELED)" : v.toUpperCase();
+                return `<option value="${v}">${label}</option>`;
+            }).join("");
+        if (variants.has(prevVal)) {
+            variantSelect.value = prevVal;
+        } else {
+            variantSelect.value = "all";
+            activeVariantFilter = "all";
+        }
     }
 }
 
@@ -454,6 +500,7 @@ function setupEventListeners() {
             document.querySelectorAll(".season-btn").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             activeSeason = btn.dataset.season;
+            populateFilterDropdowns();
             renderStats();
             renderSprites();
             updateCustomizerPreview();
@@ -695,7 +742,7 @@ function renderSprites() {
 
         let variantBadgeText = "";
         if (s.variant && s.variant !== "base") {
-            variantBadgeText = s.variant.toUpperCase();
+            variantBadgeText = s.variant === "jeweled" ? "FORTUNE" : s.variant.toUpperCase();
         }
 
         return `

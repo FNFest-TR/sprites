@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import fetch_sprites
 
-CURRENT_VERSION = "2.2.0"
+CURRENT_VERSION = "2.3.0"
 GITHUB_REPO = "FNFest-TR/sprites"
 
 # Determine runtime directory (Handles both PyInstaller frozen mode and normal script mode)

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
 
 /* ========================================================
    THEME DEFINITIONS & CSS VARIABLES
@@ -120,6 +120,36 @@
   --scanlines-opacity: 0;
   --card-art-bg: radial-gradient(circle at 50% 45%, #252a3b 0%, #151822 85%);
   --header-border: 1.5px solid #38bdf8;
+}
+
+/* THEME 5: ONE PIECE / TREASURE HUNTERS (HAZİNE AVCILARI) */
+[data-theme="onepiece"] {
+  --bg-void: #050b14;
+  --bg-dark: #0a1324;
+  --bg-card: #0e1c33;
+  --bg-card-hover: #15294b;
+  --bg-header: #08111f;
+  --bg-gradient: radial-gradient(ellipse at 50% 15%, #182848 0%, #0d172a 50%, #050b14 95%);
+  
+  --neon-pink: #e63946; /* Straw Hat Crimson / Ace Flames */
+  --neon-pink-glow: rgba(230, 57, 70, 0.5);
+  --neon-cyan: #00b4d8; /* Grand Line Azure / Zoro Blades */
+  --neon-cyan-glow: rgba(0, 180, 216, 0.45);
+  --neon-yellow: #ffc300; /* Pirate Treasure Gold */
+  --neon-green: #2ec4b6; /* Marine / Compass Emerald */
+  
+  --border-neon: rgba(255, 195, 0, 0.45);
+  --border-accent: rgba(230, 57, 70, 0.55);
+  --accent-color: #ffc300;
+  --accent-secondary: #e63946;
+  
+  --text-main: #fffaf0;
+  --text-muted: #94a3b8;
+  
+  --grid-line-color: rgba(255, 195, 0, 0.04);
+  --scanlines-opacity: 0.12;
+  --card-art-bg: radial-gradient(circle at 50% 45%, #1f3354 0%, #0b1526 85%);
+  --header-border: 2px solid #ffc300;
 }
 
 /* Rarity Colors */
@@ -1346,4 +1376,103 @@ body {
   color: #fff;
   border-color: #fff;
 }
+
+/* ========================================================
+   ONE PIECE THEME COMPONENT & TYPOGRAPHY ENHANCEMENTS
+   ======================================================== */
+[data-theme="onepiece"] .glitch-logo {
+  font-family: 'Pirata One', 'Cinzel', cursive, sans-serif !important;
+  font-size: 26px !important;
+  font-style: normal !important;
+  letter-spacing: 2px !important;
+  color: #ffc300 !important;
+  text-shadow: 
+    0 0 16px rgba(255, 195, 0, 0.7),
+    2px 2px 0px #b91c1c,
+    -1px -1px 0px #78350f !important;
+  animation: none !important;
+}
+
+[data-theme="onepiece"] .sub-badge-glitch {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  color: #ffc300 !important;
+  background: rgba(230, 57, 70, 0.18) !important;
+  border: 1px solid rgba(255, 195, 0, 0.4) !important;
+}
+
+[data-theme="onepiece"] .brand-icon {
+  background: linear-gradient(135deg, #ffc300 0%, #e63946 100%) !important;
+  box-shadow: 0 0 20px rgba(255, 195, 0, 0.6) !important;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%) !important;
+  font-size: 24px !important;
+}
+
+[data-theme="onepiece"] .stat-label {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+}
+
+[data-theme="onepiece"] .stat-number {
+  font-family: 'Pirata One', 'Orbitron', sans-serif !important;
+  font-size: 34px !important;
+  color: #ffc300 !important;
+  text-shadow: 0 0 12px rgba(255, 195, 0, 0.4) !important;
+}
+
+[data-theme="onepiece"] .progress-fill-owned {
+  background: linear-gradient(90deg, #e63946 0%, #ffc300 70%, #2ec4b6 100%) !important;
+  box-shadow: 0 0 14px rgba(255, 195, 0, 0.7) !important;
+}
+
+[data-theme="onepiece"] .season-btn.active {
+  background: linear-gradient(135deg, #ffc300 0%, #e63946 100%) !important;
+  color: #050b14 !important;
+  font-weight: 800 !important;
+  border-color: #ffc300 !important;
+  box-shadow: 0 0 16px rgba(255, 195, 0, 0.6) !important;
+}
+
+[data-theme="onepiece"] .tab-pill.active {
+  background: linear-gradient(135deg, #ffc300 0%, #d97706 100%) !important;
+  color: #060c18 !important;
+  font-weight: 800 !important;
+  border-color: #ffc300 !important;
+  box-shadow: 0 0 14px rgba(255, 195, 0, 0.5) !important;
+}
+
+[data-theme="onepiece"] .card-title {
+  font-family: 'Cinzel', 'Rajdhani', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+}
+
+[data-theme="onepiece"] .sprite-card {
+  border: 1.5px solid rgba(255, 195, 0, 0.15);
+  background: rgba(14, 28, 51, 0.9);
+}
+
+[data-theme="onepiece"] .sprite-card.is-owned {
+  border-color: #2ec4b6 !important;
+  box-shadow: 0 0 18px rgba(46, 196, 182, 0.4) !important;
+}
+
+[data-theme="onepiece"] .sprite-card.is-mastered {
+  border-color: #ffc300 !important;
+  box-shadow: 0 0 22px rgba(255, 195, 0, 0.55), inset 0 0 14px rgba(255, 195, 0, 0.15) !important;
+}
+
+[data-theme="onepiece"] .sprite-card.is-mastered::before {
+  content: "👑";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  z-index: 10;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
+}
+
 

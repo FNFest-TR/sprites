@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap');
 
 /* ========================================================
    THEME DEFINITIONS FOR OBS WIDGET
@@ -53,6 +53,37 @@
   --widget-border: 2px solid #38bdf8;
   --box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
   --card-border: 1.5px solid rgba(100, 116, 139, 0.35);
+}
+
+[data-theme="onepiece"], body.theme-onepiece {
+  --bg-widget-solid: radial-gradient(circle at 50% 35%, #182848 0%, #0d172a 60%, #050b14 100%);
+  --bg-widget-glass: rgba(13, 23, 42, 0.85);
+  --bg-card: rgba(18, 28, 48, 0.9);
+  --neon-accent: #ffc300;
+  --neon-cyan: #00b4d8;
+  --neon-yellow: #ffd166;
+  --neon-green: #2ec4b6;
+  --widget-border: 2px solid #ffc300;
+  --box-shadow: 0 0 35px rgba(255, 195, 0, 0.45), 0 0 15px rgba(230, 57, 70, 0.35);
+  --card-border: 1.5px solid rgba(255, 195, 0, 0.35);
+}
+
+body.theme-onepiece .banner-title,
+body.theme-onepiece .cassette-brand-name {
+  font-family: 'Pirata One', 'Cinzel', cursive, sans-serif !important;
+  color: #ffc300 !important;
+  letter-spacing: 1.5px;
+}
+
+body.theme-onepiece .grid-card.is-mastered::before {
+  content: "👑";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  z-index: 10;
+  filter: drop-shadow(0 0 4px #000);
 }
 
 * {

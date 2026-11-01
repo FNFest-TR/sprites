@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="glitch">
+<html lang="tr" data-theme="onepiece">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortnite Sprites Override Tracker</title>
+    <title>Fortnite Sprites Override Tracker - One Piece</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="icon" type="image/webp" href="/static/images/T_Icon_BR_Creature_Sprite_JazzJackrabbit_L.webp">
+    <link rel="icon" type="image/webp" href="/static/images/T_Icon_BR_Creature_Sprite_PeelyBones_L.webp">
 </head>
 <body>
 
@@ -20,20 +20,21 @@
     <header class="top-header">
         <div class="header-container">
             <div class="brand-section">
-                <div class="brand-icon">⚡</div>
+                <div class="brand-icon" id="brandIcon">🏴‍☠️</div>
                 <div class="brand-title">
                     <div style="display: flex; align-items: baseline;">
-                        <div class="glitch-logo" id="txtAppTitle" data-text="OVERRIDE TRACKER">OVERRIDE TRACKER</div>
-                        <span class="app-version-badge" id="appVersionBadge">v2.2.0</span>
+                        <div class="glitch-logo" id="txtAppTitle" data-text="HAZİNE AVCILARI">HAZİNE AVCILARI</div>
+                        <span class="app-version-badge" id="appVersionBadge">v2.3.0</span>
                     </div>
-                    <div class="sub-badge-glitch" id="txtAppSubtitle">GLITCH SEASON ■ SPRITES SYSTEM</div>
+                    <div class="sub-badge-glitch" id="txtAppSubtitle">ONE PIECE ■ HAZİNE AVCILARI (C7 MS)</div>
                 </div>
             </div>
 
             <div class="header-actions">
                 <!-- Theme Switcher Selector -->
                 <div class="theme-selector">
-                    <button class="theme-btn active" data-theme="glitch" onclick="setTheme('glitch')">👾 GLITCH</button>
+                    <button class="theme-btn active" data-theme="onepiece" onclick="setTheme('onepiece')">🏴‍☠️ ONE PIECE</button>
+                    <button class="theme-btn" data-theme="glitch" onclick="setTheme('glitch')">👾 GLITCH</button>
                     <button class="theme-btn" data-theme="classic" onclick="setTheme('classic')">⚡ CLASSIC</button>
                     <button class="theme-btn" data-theme="gold" onclick="setTheme('gold')">👑 GOLD</button>
                     <button class="theme-btn" data-theme="stealth" onclick="setTheme('stealth')">🌑 STEALTH</button>
@@ -144,7 +145,8 @@
                 <div class="season-pills">
                     <button class="season-btn" data-season="all" id="btnSeasonAll">ALL SEASONS</button>
                     <button class="season-btn" data-season="41" id="btnSeasonC7S3">C7 S3</button>
-                    <button class="season-btn active" data-season="42" id="btnSeasonC7S4">C7 S4</button>
+                    <button class="season-btn" data-season="42" id="btnSeasonC7S4">C7 S4</button>
+                    <button class="season-btn active" data-season="43" id="btnSeasonC7MS">C7 MS (ONE PIECE)</button>
                 </div>
 
                 <div style="display: flex; gap: 6px;">
@@ -254,7 +256,8 @@
                     <div class="control-group">
                         <label class="control-label" id="lblCustTheme">Widget Teması</label>
                         <div class="control-pills">
-                            <button class="ctrl-btn active" data-cust="theme" data-val="glitch" onclick="setCustOption('theme', 'glitch', this)">👾 Glitch</button>
+                            <button class="ctrl-btn active" data-cust="theme" data-val="onepiece" onclick="setCustOption('theme', 'onepiece', this)">🏴‍☠️ One Piece</button>
+                            <button class="ctrl-btn" data-cust="theme" data-val="glitch" onclick="setCustOption('theme', 'glitch', this)">👾 Glitch</button>
                             <button class="ctrl-btn" data-cust="theme" data-val="classic" onclick="setCustOption('theme', 'classic', this)">⚡ Classic</button>
                             <button class="ctrl-btn" data-cust="theme" data-val="gold" onclick="setCustOption('theme', 'gold', this)">👑 Gold</button>
                             <button class="ctrl-btn" data-cust="theme" data-val="stealth" onclick="setCustOption('theme', 'stealth', this)">🌑 Stealth</button>

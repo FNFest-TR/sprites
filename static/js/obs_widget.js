@@ -1,10 +1,10 @@
-// OBS Widget Controller v2.2 with Dynamic NxM Grid, Themes, Cassette Sliding Grid Mode & Unreleased Toggle
+// OBS Widget Controller v2.3 with Dynamic NxM Grid, Themes, Cassette Sliding Grid Mode & One Piece Support
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get("mode") || "grid"; // grid | ticker | banner | cassette | disk
-const season = urlParams.get("season") || "42"; // '42' (C7 S4) by default, or 'all', '41'
+const season = urlParams.get("season") || "43"; // '43' (C7 MS One Piece) by default, or '42', '41', 'all'
 const lang = urlParams.get("lang") || "tr";
 const filterType = urlParams.get("filter") || "missing"; // 'missing', 'all', 'owned'
-const theme = urlParams.get("theme") || "glitch"; // 'glitch', 'classic', 'gold', 'stealth'
+const theme = urlParams.get("theme") || "onepiece"; // 'onepiece', 'glitch', 'classic', 'gold', 'stealth'
 const cols = parseInt(urlParams.get("cols")) || 3; // 2, 3, 4
 const rows = parseInt(urlParams.get("rows")) || 3; // 1, 2, 3
 const bgStyle = urlParams.get("bg") || "solid"; // 'solid', 'glass', 'transparent'
@@ -144,7 +144,7 @@ function renderWidget() {
 
 // 1. BANNER MODE
 function renderBanner(root, owned, mastered, missing, total, pct) {
-    const seasonTag = season === "42" ? "C7 S4" : (season === "41" ? "C7 S3" : "");
+    const seasonTag = season === "43" ? "C7 MS (ONE PIECE)" : (season === "42" ? "C7 S4" : (season === "41" ? "C7 S3" : ""));
 
     root.innerHTML = `
         <div class="obs-banner-container bg-${bgStyle}">
